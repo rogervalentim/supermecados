@@ -58,6 +58,11 @@ input{
     
     bottom:10px;
 }
+
+.carrinho{
+    height:42px;
+    margin-left:50px;
+}
 .login{ 
     position:absolute;
     display:flex;
