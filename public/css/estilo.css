@@ -10,10 +10,11 @@
 body {
 	font-family: montserrat;
 }
-nav {
+.nav-1 {
 	background:black;
 	height: 80px;
 	width: 100%;
+	position: fixed;
 }
 label.logo {
 	color: white;
@@ -63,6 +64,8 @@ a.active, .a1:hover {
 	height:80px;
 	width:1200px;
 	margin-left:250px;
+	position: fixed;
+	margin-top: 80px;
 	
     
 	
@@ -134,7 +137,7 @@ h1{
 	margin-top: 100px;
 	display:grid;
 	grid-template-columns:auto auto auto auto;
-	row-gap: 20px;
+	row-gap: 100px;
 	justify-content:space-around;
 	
 
