@@ -41,11 +41,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
-
-
-// Rodando o servidor na porta 8081 - http://localhost:8081/
-const PORT = 8081
-app.listen(PORT, () => {
-    console.log("Servidor Rodando!")
-})
+module.exports = app; 
