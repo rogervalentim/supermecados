@@ -66,9 +66,6 @@ a.active, .a1:hover {
 	margin-left:250px;
 	position: fixed;
 	margin-top: 80px;
-	
-    
-	
 }
 
 
@@ -110,7 +107,7 @@ a.active, .a1:hover {
 	height: 700px;
 }
 
-h1{
+h1.home{
 	color:gray;
     margin-left:100px;
 	margin-top: 100px;
@@ -143,7 +140,7 @@ h1{
 
 }
 
-span{
+span.home{
 	font-size:25px;
 	color:orangered;
 	margin-left: 100px;

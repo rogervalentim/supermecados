@@ -1,1 +1,55 @@
-produtos
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>Produtos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/estilo.css">
+        <link rel="stylesheet" href="/css/products.css">
+        <link rel="stylesheet" href="/css/animation.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="text-center" style="margin-top:30px;">Confira nossos produtos</h1>
+
+            <div class="melhores-ofertas">
+                <h2 class="text-center" style="margin-bottom:20px;">Melhores ofertas para você!</h2>
+
+                <div class="row">
+                    <% for(var i=0; i < 4 ; i++) {%>
+                        <div class="column">
+                            <a href="/produto/<%= products[i]['slug']%>">
+                                <div class="card">
+                                    <img class="img-responsive" style="height:230px;margin-bottom: 20px;"  src="<%= products[i]['image']%>">
+                                    <a class="prod-titulo"><%= products[i]['produto']%></a>
+                                    <p class="prod-preco">R$ <%= products[i]['preco']%></p>
+                                </div>
+                            </a>
+                        </div>
+                     <% } %> 
+                </div>
+            </div>
+
+            <div class="geral">
+                <div class="row">
+                    <% for(var i=0; i<products.length; i++) {%>
+                        <div class="column">
+                            <a href="/produto/<%= products[i]['slug']%>">
+                                <div class="card">
+                                    <img class="img-responsive" style="height:230px;margin-bottom: 20px;"  src="<%= products[i]['image']%>">
+                                    <a class="prod-titulo"><%= products[i]['produto']%></a>
+                                    <p class="prod-preco">R$ <%= products[i]['preco']%></p>
+                                </div>
+                            </a>
+                        </div>
+                     <% } %> 
+                </div>
+            </div>
+            
+        </div>
+        
+        <%- include('./partials/footer'); %>
+    </body>
+</html>
