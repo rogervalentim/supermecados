@@ -10,45 +10,18 @@
     
 </head>
 <body>
-	<nav class="nav-1">
-		<input type="checkbox" id="check">
-		<label for="check" class="checkbtn">
-			<i class="fas fa-bars"></i>
-		</label>
-		<label class="logo">Mercado DH</label>
-		<ul>
-			<li><a class="active" href="#">Entrega  ou Retirada</a></li>
-			<li><a  class="a1" href="#" >Prêmios</a></li>
-			<li><a  class="a1" href="#">Para Você</a></li>
-			<li><a href="#"><img class="img" src="/img/cabecalho-img/login4-.jpg"></a></li>
-            <li><a href="#"><img class="img1" src="/img/cabecalho-img/carrinho.vetor.jpg"></a></li>
-		</ul>
-	</nav>
-    <nav class="caixas"> 
-        <ul class="ul1">
-        <li class="li1"><a class="a2" href="#">Todas as Seções</a></li>
-        <li class="li1"><a class="a2" href="#">Mercearia</a></li>
-        <li class="li1"><a class="a2" href="#">Limpeza</a></li>
-        <li class="li1"><a class="a2" href="#">Bebidas</a></li>
-        <li class="li1"><a class="a2" href="#">Açougue</a></li>
-        <li class="li1"><a class="a2" href="#">Frios</a></li>
-        <li class="li1"><a class="a2" href="#">Perfumaria</a></li>
-        <li class="li2"><a class="a3" href="#">SuperOfertas</a></li>
-        
-        </ul>
-    </nav>
-        <main>
-            <section class="carrossel">
-                <div class="fotos">
-                    <img class="foto1" src="/img/carrossel/banner-bebidas3.jpg" alt="foto 1">
-                    <img class="foto2" src="/img/carrossel/banner-brilhante.jpg" alt="foto 2">
-                    <img class="foto3" src="/img/carrossel/banner-cafe.jpg" alt="foto 3">
-                    <img class="foto6" src="/img/carrossel/banner-novo.jpg" alt="foto4">
-                    <img class="foto1" src="/img/carrossel/banner-bebidas3.jpg" alt="foto 1">
-                    
-                    
-                </div>
-            </section>
+    <%- include('./partials/header'); %>
+
+    <main>
+        <section class="carrossel">
+            <div class="fotos">
+                <img class="foto1" src="/img/carrossel/banner-bebidas3.jpg" alt="foto 1">
+                <img class="foto2" src="/img/carrossel/banner-brilhante.jpg" alt="foto 2">
+                <img class="foto3" src="/img/carrossel/banner-cafe.jpg" alt="foto 3">
+                <img class="foto6" src="/img/carrossel/banner-novo.jpg" alt="foto4">
+                <img class="foto1" src="/img/carrossel/banner-bebidas3.jpg" alt="foto 1">
+            </div>
+        </section>
         <picture class="ofertas"> 
             <img class="ofertas1" src="/img/ofertas/ofertas-img.jpg">
             <img class="ofertas2" src="/img/ofertas/ofertas-img2.jpg">
@@ -225,49 +198,7 @@
 
         </section>
     </main>
-        <footer class="rodape">
-        <div class="links"> 
-            <ul class="ul3">
-            <h2>INSTITUCIONAL</h2>
-            <li class="l3"><a class="a4" href="#">Quem Somos</a></li>
-            <li class="l3"><a class="a4" href="#">Lojas Físicas</a></li>
-            <li class="l3"><a class="a4" href="#">Trabalhe Conosco</a></li>
-            <li class="l3"><a class="a4" href="#">Central de Atendimento</a></li>
-            </ul>
-            <ul class="ul3">
-                <h2>SERVIÇOS </h2>
-                <li class="l3"><a class="a4" href="#">Termos de Uso</a></li>
-                <li class="l3"><a class="a4" href="#">Formas de Pagamento</a></li>
-                <li class="l3"><a class="a4" href="#">Política de Privacidade</a></li>
-                <li class="l3"><a class="a4" href="#">Política de Troca</a></li>
-                <li class="l3"><a class="a4" href="#">Política de Venda</a></li>
-                <li class="l3"><a class="a4" href="#">Dúvidas Frequentes</a></li>
-                </ul>
-                <ul class="ul3">
-                    <h2>MINHAS PÁGINAS </h2>
-                    <li class="l3"><a class="a4" href="#">Compra Segura</a></li>
-                    <li class="l3"><a class="a4" href="#">Entrega</a></li>
-                    <li class="l3"><a class="a4" href="#">Meus Pedidos</a></li>
-                    <li class="l3"><a class="a4" href="#">Minhas Listas</a></li>
-                    <li class="l3"><a class="a4" href="#">Meu Cadastro</a></li>
-                </ul>
-            
-            <section class="pagamento"> 
-                <h3>Formas de Pagamento</h3>
-                         
-                <img class="cartão" src="/img/cartoes/forma de pagamento - icon1-mastercard.png">
-                <img class="cartão1" src="/img/cartoes/forma de pagamento - icon2-visa.png">
-                <img class="cartão2" src="/img/cartoes/elo-icon-cartao.png">
-                <img class="cartão3" src="/img/cartoes/forma de pagamento - icon4-diners club.png">
-                <img class="cartão4" src="/img/cartoes/forma de pagamento - icon5-hipercard.png">
-                <img class="cartão5" src="/img/cartoes/forma de pagamento - icon6-alelo.png">
-               
-                    </section>
-    
 
-        </div>
-            
-    </footer>
-    
+    <%- include('./partials/footer'); %>
 </body>
 </html>
