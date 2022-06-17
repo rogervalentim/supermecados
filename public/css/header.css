@@ -2,7 +2,7 @@ nav {
 	background:black;
 	height: 80px;
 	width: 100%;
-	position: fixed;
+	/* position: fixed; */
 }
 label.logo {
 	color:white;
@@ -11,16 +11,16 @@ label.logo {
 	padding: 0 100px;
 	font-weight: bold;
 }
-nav ul {
+nav.header ul {
 	float: right;
 	margin-right: 20px;
 }
-nav ul li {
+nav.header ul li {
 	display: inline-block;
 	line-height: 80px;
 	margin: 0 5px;
 }
-nav ul li a {
+nav.header ul li a {
 	color:white;
 	font-size: 17px;
 	padding: 7px 13px;

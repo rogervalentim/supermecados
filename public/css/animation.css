@@ -13,7 +13,7 @@
 
 .carrossel .fotos img {
   width:19.9%;
-  margin-top:80px;
+  /* margin-top:80px; */
 }
 
 @keyframes animação{

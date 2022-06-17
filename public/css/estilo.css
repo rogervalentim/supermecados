@@ -14,7 +14,7 @@ nav {
 	background:black;
 	height: 80px;
 	width: 100%;
-	position: fixed;
+	/* position: fixed; */
 }
 label.logo {
 	color:white;
@@ -58,9 +58,6 @@ a.active, .a1:hover {
 	display: none;
 }
 
-
-
-
 .img,.img1{
     width:30px;
     height:30px;
@@ -69,7 +66,6 @@ a.active, .a1:hover {
 #check {
 	display: none;
 }
-
 
 .ofertas{
 	margin-top:100px;
