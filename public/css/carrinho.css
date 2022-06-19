@@ -1,3 +1,7 @@
+body{
+    font-size:1.6rem;
+    }
+
 main{
     margin-left:50px;
 }
@@ -41,12 +45,7 @@ main{
     color: white;
 }
 
-@media (min-width: 769px)  {
-    .text{
-        display:flex;
-        
-    }
-}
+
 
 @media (min-width:375px) {
     .text{
