@@ -2,7 +2,7 @@ nav {
 	background:black;
 	height: 80px;
 	width: 100%;
-	position: fixed;
+	/* position: fixed; */
 }
 label.logo {
 	color:white;
@@ -11,16 +11,16 @@ label.logo {
 	padding: 0 100px;
 	font-weight: bold;
 }
-nav ul {
+nav.header ul {
 	float: right;
 	margin-right: 20px;
 }
-nav ul li {
+nav.header ul li {
 	display: inline-block;
 	line-height: 80px;
 	margin: 0 5px;
 }
-nav ul li a {
+nav.header ul li a {
 	color:white;
 	font-size: 17px;
 	padding: 7px 13px;
@@ -56,4 +56,83 @@ a.active, .a1:hover {
 
 #check {
 	display: none;
+}
+
+@media (max-width: 952px){
+	label.logo{
+		font-size: 30px;
+		padding-left: 50px;
+	}
+	nav ul li a{
+		font-size: 16px;
+	}
+}
+@media (max-width: 858px){
+	.checkbtn {
+		display: block;
+	}
+	ul{
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background:none;
+		top: 80px;
+		left: -100%;
+		text-align: center;
+		transition: all .5s;
+	}
+	nav ul li{
+		display: block;
+		margin: 50px 0;
+		line-height: 30px;
+	}
+	nav ul li a {
+		font-size: 20px;
+	}
+	a:hover, a.active:hover, .a.active1  {
+    
+		color:orangered;
+	}
+	#check:checked ~ ul {
+		left: 0;
+		background:black ;
+		
+	}
+	
+}
+@media (max-width:375px){
+	.logo{
+		font-size: 15px;
+	}
+	.checkbtn {
+		display: block;
+	}
+	ul{
+		position: fixed;
+		width:100%;
+		height: 100vh;
+		background:none;
+		top: 80px;
+		left: -100%;
+		text-align: center;
+		transition: all .5s;
+	}
+	nav ul li{
+		display: block;
+		margin: 50px 0;
+		line-height: 30px;
+	}
+	nav ul li a {
+		font-size: 20px;
+	}
+	a:hover, a.active:hover, .a.active1  {
+		color:orangered;
+	}
+	#check:checked ~ ul {
+		left:0;
+		background:black ;
+		
+	}
+	
+	
 }

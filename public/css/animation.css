@@ -8,13 +8,29 @@
 
 
 .carrossel{
+    overflow: hidden;
 	width:102%;
+    bottom:3px;
+
 }
+
 
 .carrossel .fotos img {
   width:19.9%;
-  margin-top:80px;
+  /* margin-top:80px; */
 }
+
+@media (max-width:768px){
+	.carrossel{
+		width:768px;
+	}
+	
+}
+
+
+
+
+
 
 @keyframes animação{
     0% { 
@@ -45,5 +61,4 @@
     100%{ 
         margin-left: -400%;
     }
-
 }
