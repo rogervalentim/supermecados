@@ -1,3 +1,4 @@
+
 const carrinhoController={
     index:(req,res)=>{
         res.render('carrinho');
