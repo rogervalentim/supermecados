@@ -19,7 +19,8 @@
     "morgan": "~1.9.1",
     "mysql2": "^2.3.3",
     "popper.js": "^1.14.3",
-    "sequelize": "^6.21.1"
+    "sequelize": "^6.21.1",
+    "sequelize-auto-migrations-v2": "^1.2.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.18",

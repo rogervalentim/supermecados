@@ -5,6 +5,7 @@ const productsController= require('../controllers/productsController')
 const productController= require('../controllers/productController')
 const finalizacaoController= require('../controllers/finalizacaoController')
 const carrinhoController= require('../controllers/carrinhoController')
+const clienteController= require('../controllers/clienteController')
 
 /* GET home page. */
 router.get('/',mainController.index)
@@ -20,4 +21,8 @@ router.get('/finalizacao', finalizacaoController.index)
 
 /* GET carrinho page. */
 router.get('/carrinho',carrinhoController.index)
+
+/* GET clientes lista */
+router.get('/clientes/lista', clienteController.listar)
+
 module.exports = router;
