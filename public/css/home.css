@@ -20,6 +20,7 @@ h1.home{
 }
 
 .produto { 
+
 	margin-bottom: 20px; 
 	cursor: pointer;
 	margin:10px;
@@ -34,19 +35,19 @@ h1.home{
  }
 
 .img-r{
+	height:230px;
 	max-width: 100%;
 }
 
-.produtos {
-	margin-top: 100px;
-	display:grid;
-	grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
-	row-gap: 10px ;
 
-	
 
-	justify-content:center;
-	
+#produtos {
+	margin-left: 20px;
+	margin-top:50px;
+    display:grid;
+	grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+	row-gap: 20px;
+	justify-content:space-around;
 
 }
 
@@ -56,9 +57,13 @@ h1.home{
 	padding: 16px;
 	text-align: center;
 	background-color: #f1f1f1;
-	height: 370px;
+	height: 350px;
 	border-radius: 20px;
+	max-width: 85%;
+	
+
   }
+
 
 span.home{
 	font-size:25px;
@@ -67,6 +72,11 @@ span.home{
 }
 
 .a3{ 
+	color:gray;
+}
+
+.a3:hover{
+	text-decoration: none;
 	color:gray;
 }
 

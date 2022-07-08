@@ -1,3 +1,6 @@
+*{
+	font-family: 'Montserrat';
+}
 nav {
 	background:black;
 	height: 80px;
@@ -63,6 +66,7 @@ a.active, .a1:hover {
 		font-size: 30px;
 		padding-left: 50px;
 	}
+	
 	nav ul li a{
 		font-size: 16px;
 	}
@@ -81,6 +85,7 @@ a.active, .a1:hover {
 		text-align: center;
 		transition: all .5s;
 	}
+	
 	nav ul li{
 		display: block;
 		margin: 50px 0;
@@ -107,6 +112,7 @@ a.active, .a1:hover {
 	.checkbtn {
 		display: block;
 	}
+	
 	ul{
 		position: fixed;
 		width:100%;

@@ -17,7 +17,8 @@
     <%- include('./partials/header'); %>
 
     <main>
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+       
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="bottom:17px">
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img class="d-block w-100" src="/img/carrossel/banner-ofertas2.1.jpg" alt="First slide">
@@ -41,246 +42,33 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
+      
     
-        <picture class="ofertas"> 
-            <img class="ofertas1" src="/img/ofertas/ofertas-img.jpg">
-            <img class="ofertas2" src="/img/ofertas/ofertas-img2.jpg">
-            <img class="ofertas3" src="/img/ofertas/ofertas-todynho.jpg">
-            <img class="ofertas4" src="/img/ofertas/ofertas nescafé.jpg">
-        </picture>
+        <%- include('./partials/ofertas') %>
 
         <h1 class="home">SUPEROFERTAS</h1>
-        <section class="produtos"> 
-            <section class="produto">
-            <div  class="cartao">
-            <img class="img-r" src="/img/produtos/produto1.jpg">
-            <p><a class="a3" href="/sobrecoxa">Sobrecoxa Sadia Bio 1 Kg</a></p>
-            <span class="home">R$12,95</span>
-            </div>
-            </section>
-            <section class="produto">
+        
+        <section id="produtos">
+          <% home.forEach(produto => { %>
             <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto2.jpg">
-            <p><a class="a3" href="/Hambúrguer">Hambúrguer Bovino Tradicional 350g</a></p> 
-            <span class="home">R$14,79</span>
+              <img class="img-r" src="<%= produto.imagem%>">
+              <div class="cartao-conteudo">
+              <p><a class="a3" href="/produto/<%= produto.id%>"><%= produto.produto %></a></p>
+              <span class="home"><%= produto.preco%></span>
+              </div>
             </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto3.jpg">
-            <p><a class="a3" href="/batata">Batata MCcain 600g</a></p>
-            <span class="home">Por R$10,99</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto37.jpg">
-            <p><a class="a3" href="/frango">Coxa Seara Congelada 1kg</a></p>
-            <span class="home">R$9,99</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto5.jpg">
-            <p><a class="a3" href="/peito-de-frango">Peito de Frango Sadia Zip 1 kg</a></p>
-            <span class="home">R$21,95</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto6.jpg">
-            <p><a class="a3" href="/linguiça">Linguiça Gourmet Seara  500g</a></p>
-            <span class="home">R$16,99</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto7.jpg">
-            <p><a class="a3" href="/lasanha">Lasanha Bolonhesa Sadia 600g</a></p>
-            <span class="home">R$12,85</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto8.jpg">
-            <p><a class="a3" href="/hotdog">Salsicha Hot dog Seara 500g</a></p>
-            <span class="home">R$9,90</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto9.jpg">
-            <p><a class="a3" href="/requeijão">Requeijão Danone 200g</a></p>
-            <span class="home">R$5,99</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto10.jpg">
-            <p><a class="a3" href="/pão">Pão pullman 500g</a></p>
-            <span class="home">R$9,29</span>
-            </div>
-            </section>
-            <section class="produto"> 
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto11.jpg">
-            <p><a class="a3" href="/margarina">Margarina Becel 500 g</a></p>
-            <span class="home">R$7,99</span>
-            </div>
-            </section>
-            <section class="produto"> 
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto12.jpg">
-            <p><a class="a3" href="/iogurte">Iogurte Danone desnatado 1,25 kg</a></p>
-            <span class="home">R$12,95</span>
-            </div>
-            </section>
-            <section class="produto"> 
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto13.jpg">
-            <p><a class="a3" href="/café">Café Pilão tradicional 500g</a></p>
-            <span class="home">R$17,98</span>
-            </div>
-            </section>
-            <section class="produto"> 
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto14.jpg">
-            <p><a class="a3" href="/toddy">Toddy Twix achocolado em pó 350g</a></p>
-            <span class="home">R$5,99</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto15.jpg">
-            <p><a class="a3" href="/molico">Leite em pó Molico desnatado 280g</a></p>
-            <span class="home">R$14,49</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto16.jpg">
-            <p><a class="a3" href="/chá">Chá Leão Matte 250g</a></p>
-            <span class="home">R$7,99</span>
-            </div>
-            </section>
-            <section class="produto"> 
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto17.jpg">
-            <p><a class="a3" href="/arroz">Arroz Tio João agulhinha tipo 1 1kg </a></p>
-            <span class="home">R$4,98</span>
-            </div>
-            </section>
-            <section class="produto"> 
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto18.jpg">
-            <p><a class="a3" href="/azeite">Azeite extra virgem Serrat 500ml</a></p>
-            <span class="home">R$22,99</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto19.jpg">
-            <p><a class="a3" href="/macarrão">Macarrão Grano Duro Pene Rigate 500g</a></p>
-            <span class="home">R$8,99</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto20.jpg">
-            <p><a class="a3" href="/molho"></a>Molho de Tomate Basilio 390 g</p>
-            <span class="home">R$7,69</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto21.jpg">
-            <p><a class="a3" href="/leite-condensado"></a>Leite Condensado Itambé Lata 395g</p>
-            <span class="home">R$6,29</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto22.jpg">
-            <p><a class="a3" href="/biscoito-maizena">Biscoito Maizena 200g </a></p>
-            <span class="home">R$2,69</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto23.jpg">
-            <p><a class="a3" href="/queijo-vigor"></a>Queijo Vigor ralado 100g</p>
-            <span class="home">R$8,99</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto24.jpg">
-            <p><a class="a3" href="/azeitona"></a>Azeitona Hemmer Verde 150g</p>
-            <span class="home">R$6,99</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto25.jpg">
-            <p><a class="a3" href="/bombom-lacta">Bombom Lacta 250,6g</a></p>
-            <span class="home">R$12,42</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto26.jpg">
-            <p><a class="a3" href="/diamante">Chocolate Diamante Negro 90g</a></p>
-            <span class="home">R$4,89</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto27.jpg">
-            <p><a class="a3" href="/lacta-amendoas">Chocolate 40% Cacau Amendôas</a></p>
-            <span class="home">R$7,39</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto28.jpg">
-            <p><a class="a3" href="/amandita">Chocolate Amandita lacta 200g</a></p>
-            <span class="home">R$9,98</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto29.jpg">
-            <p><a class="a3" href="/jasmine">Biscoito Integral Jasmine 75g</a></p>
-            <span class="home">R$3,89</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto30.jpg">
-            <p><a class="a3" href="/geleia">Geleia Frutas Vermelhas Linea 230g</a></p>
-            <span class="home">R$14,99</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto31.jpg">
-            <p><a class="a3" href="/chocolate">Chocolate 40% Cacau Amendôas</a></p>
-            <span class="home">R$7,39</span>
-            </div>
-            </section>
-            <section class="produto">
-            <div class="cartao">
-            <img class="img-r" src="/img/produtos/produto32.jpg">
-            <p><a class="a3" href="/macarrão">Macarrão Urbano Parafuso 500g</a></p>
-            <span class="home">R$3,99</span>
-            </div>
-            </section>
-        </section>
+          <% }) %>
+        </section>  
+        
+
+           
+
     </main>
 
     <%- include('./partials/footer'); %>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
+
 </html>
