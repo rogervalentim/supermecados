@@ -1,2 +1,2 @@
 # supermecados
-sprint-2 pagina-home.
+Projeto Integrador Digital House
