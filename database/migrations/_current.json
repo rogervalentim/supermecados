@@ -1,7 +1,7 @@
 {
     "tables": {
-        "Categoria": {
-            "tableName": "Categoria",
+        "Clientes": {
+            "tableName": "Clientes",
             "schema": {
                 "id": {
                     "primaryKey": true,
@@ -38,8 +38,8 @@
             },
             "indexes": []
         },
-        "Clientes": {
-            "tableName": "Clientes",
+        "Produtos": {
+            "tableName": "Produtos",
             "schema": {
                 "id": {
                     "primaryKey": true,
@@ -51,17 +51,19 @@
                 "nome": {
                     "allowNull": false,
                     "field": "nome",
-                    "seqType": "Sequelize.STRING(100)"
+                    "seqType": "Sequelize.STRING"
                 },
-                "email": {
-                    "allowNull": false,
-                    "field": "email",
-                    "seqType": "Sequelize.STRING(15)"
+                "preco": {
+                    "field": "preco",
+                    "seqType": "Sequelize.DECIMAL"
                 },
-                "ativo": {
-                    "allowNull": false,
-                    "field": "ativo",
-                    "seqType": "Sequelize.BOOLEAN"
+                "categoria": {
+                    "field": "categoria",
+                    "seqType": "Sequelize.STRING"
+                },
+                "descriçao": {
+                    "field": "descriçao",
+                    "seqType": "Sequelize.STRING"
                 },
                 "created_at": {
                     "allowNull": false,

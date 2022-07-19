@@ -1,0 +1,11 @@
+
+main{
+    padding: 0 20px;
+}
+#product-list table {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+  #product-list .table-container {
+    overflow-x: auto;
+  }

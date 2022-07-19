@@ -5,21 +5,21 @@ var Sequelize = require('sequelize');
 /**
  * Actions summary:
  *
- * createTable "Categoria", deps: []
+ * createTable "Produtos", deps: []
  *
  **/
 
 var info = {
     "revision": 2,
-    "name": "meu_migration2",
-    "created": "2022-07-08T19:39:01.294Z",
+    "name": "meu_migration",
+    "created": "2022-07-19T02:10:54.939Z",
     "comment": ""
 };
 
 var migrationCommands = [{
     fn: "createTable",
     params: [
-        "Categoria",
+        "Produtos",
         {
             "id": {
                 "type": Sequelize.BIGINT(10).UNSIGNED,
@@ -29,19 +29,21 @@ var migrationCommands = [{
                 "primaryKey": true
             },
             "nome": {
-                "type": Sequelize.STRING(100),
+                "type": Sequelize.STRING,
                 "field": "nome",
                 "allowNull": false
             },
-            "email": {
-                "type": Sequelize.STRING(15),
-                "field": "email",
-                "allowNull": false
+            "preco": {
+                "type": Sequelize.DECIMAL,
+                "field": "preco"
             },
-            "ativo": {
-                "type": Sequelize.BOOLEAN,
-                "field": "ativo",
-                "allowNull": false
+            "categoria": {
+                "type": Sequelize.STRING,
+                "field": "categoria"
+            },
+            "descriçao": {
+                "type": Sequelize.STRING,
+                "field": "descriçao"
             },
             "created_at": {
                 "type": Sequelize.DATE,
