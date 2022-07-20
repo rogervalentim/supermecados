@@ -46,7 +46,7 @@ h1.home{
 	margin-top:50px;
     display:grid;
 	grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
-	row-gap: 20px;
+	row-gap: 40px;
 	justify-content:space-around;
 
 }
