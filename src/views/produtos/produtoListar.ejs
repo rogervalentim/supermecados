@@ -5,6 +5,7 @@
 	<title>home</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/css/estilo.css">
+  <link rel="stylesheet" href="/css/cadastrar.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -28,7 +29,7 @@
 	</nav>
 </div>
 <main>
-<h1>Lista De Produtos</h1>
+<h1 class="list">Lista De Produtos</h1>
 <table class="table">
     <thead class="table-dark">
       <tr>
@@ -40,18 +41,25 @@
         <th scope="col">Ações</th>
       </tr>
     </thead>
-    <% products.forEach(product => { %>
+    <% produtos.forEach(produto => { %>
     <tbody>
         <tr>
-          <th scope="row"><%= product.id %></th>
-          <th scope="row"><%= product.nome %></th>
-          <th scope="row"><%= product.preco %></th>
-          <th scope="row"><%= product.categoria %></th>
-          <th scope="row"><%= product.descriçao %></th>
-         
+          <th scope="row"><%= produto.id %></th>
+          <th scope="row"><%= produto.nome %></th>
+          <th scope="row"><%= produto.preco %></th>
+          <th scope="row"><%= produto.categoria %></th>
+          <th scope="row"><%= produto.descricao %></th>
+          <th scope="row">
+            <a href="/alterar/<%= produto.id %>" class="btn btn-dark">Alterar</a>
+            <a href="/ver/<%= produto.id %>" class="btn btn-danger">Deletar</a>
+
+          </th>
+        
         </tr>
+  
         <%  }); %>
     </tbody>
+    
 </table>
 </main>
 </body>

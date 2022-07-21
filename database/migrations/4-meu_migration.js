@@ -10,9 +10,9 @@ var Sequelize = require('sequelize');
  **/
 
 var info = {
-    "revision": 2,
+    "revision": 4,
     "name": "meu_migration",
-    "created": "2022-07-19T02:10:54.939Z",
+    "created": "2022-07-21T02:16:05.434Z",
     "comment": ""
 };
 
@@ -29,21 +29,22 @@ var migrationCommands = [{
                 "primaryKey": true
             },
             "nome": {
-                "type": Sequelize.STRING,
+                "type": Sequelize.STRING(100),
                 "field": "nome",
                 "allowNull": false
             },
             "preco": {
-                "type": Sequelize.DECIMAL,
-                "field": "preco"
+                "type": Sequelize.INTEGER,
+                "field": "preco",
+                "allowNull": false
             },
             "categoria": {
                 "type": Sequelize.STRING,
                 "field": "categoria"
             },
-            "descriçao": {
+            "descricao": {
                 "type": Sequelize.STRING,
-                "field": "descriçao"
+                "field": "descricao"
             },
             "created_at": {
                 "type": Sequelize.DATE,

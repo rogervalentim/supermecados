@@ -27,12 +27,20 @@ router.get('/carrinho',carrinhoController.index)
 router.get('/clientes/lista', clienteController.listar)
 
 // crud -sequelize admProduto 
-router.get('/cadastrar',admProdutoController.create)
-router.get("/lista", admProdutoController.listar)
-router.get('/cadastrar',admProdutoController.store)
 
-//router.get('/:id', admProdutoController.findById)
 
+//listar
+router.get('/lista/produtos',admProdutoController.listar)
+
+//criar
+router.get('/cadastrar',admProdutoController.criar)
+
+//salvar
+router.post('/cadastrar',admProdutoController.salvar)
+
+//alterar
+router.get('/alterar/:id',admProdutoController.alterar)
+router.put('/alterar/:id',admProdutoController.atualizar)
 
 
 

@@ -51,18 +51,19 @@
                 "nome": {
                     "allowNull": false,
                     "field": "nome",
-                    "seqType": "Sequelize.STRING"
+                    "seqType": "Sequelize.STRING(100)"
                 },
                 "preco": {
+                    "allowNull": false,
                     "field": "preco",
-                    "seqType": "Sequelize.DECIMAL"
+                    "seqType": "Sequelize.INTEGER"
                 },
                 "categoria": {
                     "field": "categoria",
                     "seqType": "Sequelize.STRING"
                 },
-                "descriçao": {
-                    "field": "descriçao",
+                "descricao": {
+                    "field": "descricao",
                     "seqType": "Sequelize.STRING"
                 },
                 "created_at": {
@@ -79,5 +80,5 @@
             "indexes": []
         }
     },
-    "revision": 2
+    "revision": 4
 }
