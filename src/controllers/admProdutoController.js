@@ -36,6 +36,7 @@ const admProdutoController = {
          
          const resultado= await db.Produto.create({
             nome:req.body.nome,
+            slug:req.body.slug,
             preco:req.body.preco,
             categoria:req.body.categoria,
             descricao:req.body.descricao
