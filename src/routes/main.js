@@ -42,6 +42,9 @@ router.post('/cadastrar',admProdutoController.salvar)
 router.get('/alterar/:id',admProdutoController.alterar)
 router.put('/alterar/:id',admProdutoController.atualizar)
 
+//deletar
+router.delete('/deletar/:id',admProdutoController.destroy)
+
 
 
 

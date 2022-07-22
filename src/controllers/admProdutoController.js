@@ -76,8 +76,7 @@ const admProdutoController = {
             id:id
            }
           
-      }
-      )
+      })
    
       console.log(resultado)
       res.redirect('/lista/produtos')
@@ -87,9 +86,27 @@ const admProdutoController = {
      }
      
    
+   },
+   destroy:async (req,res)=>{
+   const {id} =req.params
+   const resultado= await db.Produto.destroy({
+      
+         where:{
+         id:id
+         }
+      
+   })
+   console.log(resultado)
+   res.redirect('/lista/produtos')
+
+   try {
+      
+   } catch (err) {
+   console.log(err)
    }
    }
 
+}
   
 
 
