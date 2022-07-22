@@ -18,14 +18,13 @@
 
             <div class="melhores-ofertas">
                 <h2 class="text-center" style="margin-bottom:20px;">Melhores ofertas para você!</h2>
-
                 <div class="row">
-                    <% for(var i=0; i < 4 ; i++) {%>
+                     <% for(var i=0; i<products.length; i++){%>
                         <div class="column">
                             <a href="/produto/<%= products[i]['slug']%>">
                                 <div class="card">
-                                    <img class="img-responsive" style="height:230px;margin-bottom: 20px;"  src="<%= products[i]['image']%>">
-                                    <a class="prod-titulo"><%= products[i]['produto']%></a>
+                                    <img class="img-responsive" style="height:230px;margin-bottom: 20px;"  src="">
+                                    <a class="prod-titulo"><%= products[i]['nome']%></a>
                                     <p class="prod-preco">R$ <%= products[i]['preco']%></p>
                                 </div>
                             </a>
@@ -40,9 +39,10 @@
                         <div class="column">
                             <a href="/produto/<%= products[i]['slug']%>">
                                 <div class="card">
-                                    <img class="img-responsive" style="height:230px;margin-bottom: 20px;"  src="<%= products[i]['image']%>">
-                                    <a class="prod-titulo"><%= products[i]['produto']%></a>
-                                    <p class="prod-preco">R$ <%= products[i]['preco']%></p>
+                                    <img class="img-responsive" style="height:230px;margin-bottom: 20px;"  src="">
+                                    <a class="prod-titulo"><%= products[i]['nome']%></a>
+                                    <a class="prod-preco"><%= products[i]['preco']%></a>
+
                                 </div>
                             </a>
                         </div>
