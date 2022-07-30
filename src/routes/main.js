@@ -30,17 +30,17 @@ router.get('/clientes/lista', clienteController.listar)
 
 
 //listar
-router.get('/lista/produtos',admProdutoController.listar)
+router.get('/lista/produtos',admProdutoController.list)
 
 //criar
-router.get('/cadastrar',admProdutoController.criar)
+router.get('/cadastrar',admProdutoController.create)
 
 //salvar
-router.post('/cadastrar',admProdutoController.salvar)
+router.post('/cadastrar',admProdutoController.store)
 
 //alterar
-router.get('/alterar/:id',admProdutoController.alterar)
-router.put('/alterar/:id',admProdutoController.atualizar)
+router.get('/alterar/:id',admProdutoController.edit)
+router.put('/alterar/:id',admProdutoController.update)
 
 //deletar
 router.delete('/deletar/:id',admProdutoController.destroy)

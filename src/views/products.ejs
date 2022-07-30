@@ -1,6 +1,4 @@
-<!DOCTYPE html>
 
-<html lang="pt-BR">
     <%- include('./partials/header') %>
     <head>
         <title>Produtos</title>
@@ -8,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/css/estilo.css">
         <link rel="stylesheet" href="/css/products.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
         <link rel="stylesheet" href="/css/animation.css">
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     
@@ -23,9 +23,10 @@
                         <div class="column">
                             <a href="/produto/<%= products[i]['slug']%>">
                                 <div class="card">
-                                    <img class="img-responsive" style="height:230px;margin-bottom: 20px;"  src="">
+                                    <img class="img-responsive" style="height:230px;margin-bottom: 20px;"  src="<%= products[i]['imagem']%>">
                                     <a class="prod-titulo"><%= products[i]['nome']%></a>
                                     <p class="prod-preco">R$ <%= products[i]['preco']%></p>
+
                                 </div>
                             </a>
                         </div>
@@ -39,9 +40,11 @@
                         <div class="column">
                             <a href="/produto/<%= products[i]['slug']%>">
                                 <div class="card">
-                                    <img class="img-responsive" style="height:230px;margin-bottom: 20px;"  src="">
+                                    <img class="img-responsive" style="height:230px;margin-bottom: 20px;"  src="<%= products[i]['imagem']%>">
                                     <a class="prod-titulo"><%= products[i]['nome']%></a>
-                                    <a class="prod-preco"><%= products[i]['preco']%></a>
+                                    <p class="prod-preco">R$ <%= products[i]['preco']%></p>
+                                   
+
 
                                 </div>
                             </a>

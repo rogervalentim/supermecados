@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>home</title>
+	<title>Atualizar Produtos</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/css/estilo.css">
   
@@ -30,10 +30,14 @@
 </div>
  <h1 class="titulo">Alterar Produtos</h1>
  <div class="cadastro">
-<form action="/alterar/<%= produto.id %>?_method=PUT" method="post">
+<form action="/alterar/<%= produto.id_produto %>?_method=PUT" method="post">
 <div class="field">
 <label class="l1" for="nome"><strong>Nome do Produto</strong></label>
 <input class="campo" type="text" id="nome" name="nome" value="<%= produto.nome %>">
+</div>
+<div class="field">
+<label class="l1" for="slug"><strong>Slug</strong></label>
+<input class="campo" type="text" id="slug" name="slug" value="<%= produto.slug %>">
 </div>
 <div class="field">
 <label class="l1" for="preco"><strong>Preço do Produto</strong></label>
@@ -47,6 +51,8 @@
 <label class="l1" for="descricao"><strong>Descrição do Produto</strong></label>
 <input class="campo" type="text" id="descricao" name="descricao" value="<%= produto.descricao %>">
 </div>
-<button class="bt-cadastro" type="submit">Salvar Alterções</button>
+<button class="bt-cadastro" type="submit">Salvar Alterações</button>
 </form>
 </div>
+<script src="../../../public/js/validar.js"></script>
+</body>

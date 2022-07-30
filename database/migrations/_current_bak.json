@@ -1,5 +1,23 @@
 {
     "tables": {
+        "categorias": {
+            "tableName": "categorias",
+            "schema": {
+                "id_categoria": {
+                    "primaryKey": true,
+                    "allowNull": false,
+                    "autoIncrement": true,
+                    "field": "id_categoria",
+                    "seqType": "Sequelize.BIGINT(10).UNSIGNED"
+                },
+                "nome": {
+                    "allowNull": false,
+                    "field": "nome",
+                    "seqType": "Sequelize.STRING(100)"
+                }
+            },
+            "indexes": []
+        },
         "Clientes": {
             "tableName": "Clientes",
             "schema": {
@@ -37,7 +55,53 @@
                 }
             },
             "indexes": []
+        },
+        "produtos": {
+            "tableName": "produtos",
+            "schema": {
+                "id_produto": {
+                    "allowNull": false,
+                    "autoIncrement": true,
+                    "primaryKey": true,
+                    "field": "id_produto",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "slug": {
+                    "field": "slug",
+                    "seqType": "Sequelize.STRING"
+                },
+                "nome": {
+                    "allowNull": false,
+                    "field": "nome",
+                    "seqType": "Sequelize.STRING(100)"
+                },
+                "preco": {
+                    "allowNull": false,
+                    "field": "preco",
+                    "seqType": "Sequelize.DECIMAL"
+                },
+                "descricao": {
+                    "field": "descricao",
+                    "seqType": "Sequelize.STRING"
+                },
+                "imagem": {
+                    "field": "imagem",
+                    "seqType": "Sequelize.STRING"
+                },
+                "fk_categoria": {
+                    "field": "fk_categoria",
+                    "allowNull": true,
+                    "references": {
+                        "model": "categorias",
+                        "key": "id_categoria"
+                    },
+                    "onDelete": "NO ACTION",
+                    "onUpdate": "CASCADE",
+                    "seqType": "Sequelize.BIGINT(10).UNSIGNED"
+                }
+            },
+            "indexes": []
         }
     },
-    "revision": 3
+    "revision": 7
 }

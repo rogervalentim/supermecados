@@ -1,5 +1,23 @@
 {
     "tables": {
+        "categorias": {
+            "tableName": "categorias",
+            "schema": {
+                "id_categoria": {
+                    "allowNull": false,
+                    "autoIncrement": true,
+                    "primaryKey": true,
+                    "field": "id_categoria",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "nome": {
+                    "allowNull": false,
+                    "field": "nome",
+                    "seqType": "Sequelize.STRING(100)"
+                }
+            },
+            "indexes": []
+        },
         "Clientes": {
             "tableName": "Clientes",
             "schema": {
@@ -38,15 +56,19 @@
             },
             "indexes": []
         },
-        "Produtos": {
-            "tableName": "Produtos",
+        "produtos": {
+            "tableName": "produtos",
             "schema": {
-                "id": {
-                    "primaryKey": true,
+                "id_produto": {
                     "allowNull": false,
                     "autoIncrement": true,
-                    "field": "id",
-                    "seqType": "Sequelize.BIGINT(10).UNSIGNED"
+                    "primaryKey": true,
+                    "field": "id_produto",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "slug": {
+                    "field": "slug",
+                    "seqType": "Sequelize.STRING"
                 },
                 "nome": {
                     "allowNull": false,
@@ -56,29 +78,30 @@
                 "preco": {
                     "allowNull": false,
                     "field": "preco",
-                    "seqType": "Sequelize.INTEGER"
-                },
-                "categoria": {
-                    "field": "categoria",
-                    "seqType": "Sequelize.STRING"
+                    "seqType": "Sequelize.DECIMAL"
                 },
                 "descricao": {
                     "field": "descricao",
                     "seqType": "Sequelize.STRING"
                 },
-                "created_at": {
-                    "allowNull": false,
-                    "field": "created_at",
-                    "seqType": "Sequelize.DATE"
+                "imagem": {
+                    "field": "imagem",
+                    "seqType": "Sequelize.STRING"
                 },
-                "updated_at": {
-                    "allowNull": false,
-                    "field": "updated_at",
-                    "seqType": "Sequelize.DATE"
+                "fk_categoria": {
+                    "field": "fk_categoria",
+                    "allowNull": true,
+                    "references": {
+                        "model": "categorias",
+                        "key": "id_categoria"
+                    },
+                    "onDelete": "NO ACTION",
+                    "onUpdate": "CASCADE",
+                    "seqType": "Sequelize.BIGINT(10).UNSIGNED"
                 }
             },
             "indexes": []
         }
     },
-    "revision": 4
+    "revision": 8
 }

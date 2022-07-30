@@ -1,24 +1,16 @@
-const db = require("../../database/models")
-const admProdutoController = {
-   visualizar: async (req,res)=>{
-      try{
-          const produto = await db.Produto.findOne({
-              raw: true,
-          })
-          console.log(produto);
-          res.render('produtos/produtoVisualizar', {produto});
-      }
-      catch(err){
-          console.log(err);
-      }
-  
 
-},
-   listar: async (req,res)=>{
+const {Produto,Categoria} = require("../../database/models");
+const admProdutoController = {
+   list: async (req,res)=>{
       try{
-         const produtos = await db.Produto.findAll({
-         
-         })
+         const produtos = await Produto.findAll({
+         include:{      
+            model:Categoria,
+            required: true,
+            as:"categorias"
+         }
+            })
+      
          console.log(produtos)
          return res.render('produtos/produtoListar',{produtos})
       }
@@ -27,12 +19,11 @@ const admProdutoController = {
       }
    },
 
-   criar:(req,res)=>{
+   create:(req,res)=>{
       return res.render('produtos/produtoCadastrar')
    },
 
-   salvar:async (req,res)=>{
-
+   store:async (req,res)=>{
 
       function slugify(str)
       {
@@ -63,16 +54,16 @@ const admProdutoController = {
 
       try{
          
-         const resultado= await db.Produto.create({
+         const result= await Produto.create({
             nome:req.body.nome,
-            slug: $slug,
+            slug:$slug,
             preco:req.body.preco,
             categoria:req.body.categoria,
             descricao:req.body.descricao,
-            imagem: req.body.imagem ?? '/img/produtos/produto8.jpg',
+            imagem: req.body.imagem,
          })
 
-         console.log(resultado)
+         console.log(result)
          return res.redirect('/lista/produtos')
       }
       catch(err){
@@ -82,21 +73,23 @@ const admProdutoController = {
    
    },
 
-   alterar:async (req,res)=>{
+   edit:async (req,res)=>{
     try {
       const {id} = req.params
-      const produto = await db.Produto.findByPk(id)
+      const produto = await Produto.findByPk(id)
       return res.render ('produtos/produtoAtualizar',{produto})
     } catch (error) {
       console.log(err)
     }
    },
-   atualizar:async (req,res)=>{
+   update:async (req,res)=>{
      
      try {
       const {id} = req.params 
-      const resultado= await db.Produto.update({
+      const resultado= await Produto.update({
+
          nome:req.body.nome,
+         slug:req.body.slug,
          preco:req.body.preco,
          categoria:req.body.categoria,
          descricao:req.body.descricao
@@ -104,7 +97,7 @@ const admProdutoController = {
       },{
          
            where:{
-            id:id
+            id_produto:id
            }
           
       })
@@ -120,14 +113,14 @@ const admProdutoController = {
    },
    destroy:async (req,res)=>{
    const {id} =req.params
-   const resultado= await db.Produto.destroy({
+   const result= await Produto.destroy({
       
          where:{
-         id:id
+         id_produto:id
          }
       
    })
-   console.log(resultado)
+   console.log(result)
    res.redirect('/lista/produtos')
 
    try {

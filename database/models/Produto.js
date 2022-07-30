@@ -1,45 +1,50 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Produto';
-    let cols = {
-      id: {
-        type: dataTypes.BIGINT(10).UNSIGNED,
-        primaryKey: true,
+  const Produto = sequelize.define(
+    "Produto",
+    {
+      id_produto:{
+        type: dataTypes.INTEGER,
         allowNull: false,
-        autoIncrement: true
+        autoIncrement: true,
+        primaryKey: true,
+       
       },
-      // created_at: dataTypes.TIMESTAMP,
-      // updated_at: dataTypes.TIMESTAMP,
+      slug:{
+        type:dataTypes.STRING
+      },
       nome: {
         type: dataTypes.STRING(100),
         allowNull: false
       },
       preco: {
-        type: dataTypes.INTEGER,
+        type: dataTypes.DECIMAL,
         allowNull: false
-      },
-      categoria: {
-        type: dataTypes.STRING,
-    
       },
       descricao:{
         type:dataTypes.STRING
       },
-      //slug:{
-        //type:dataTypes.STRING
+      imagem: {
+        type: dataTypes.STRING
+      },
+      fk_categoria:{
+        type: dataTypes.BIGINT(10).UNSIGNED,
+        }
+      }
+     
       
-    };
-    //Criar um campo de slug para os produtos
-   // O campo slug deve ser o nome do produto, mas ajustado para caber na url
-    //* Criar campo de imagem no banco
-    //Quando salvar algum produto, cadastrar uma URL padrao de imagem, para não ficar sem imagem
-    
-    let config = {
-      timestamps: true,
-      createdAt: 'created_at',
-      updatedAt: 'updated_at',
-      deletedAt: false
-    };
-    const Produto = sequelize.define(alias, cols, config);
+    ,{
+      tableName: "produtos",
+      timestamps: false
+    }
+  );
   
-    return Produto;
-  };
+Produto.associate = (models) => {
+  Produto.belongsTo(models.Categoria, {
+    foreignKey: "fk_categoria",
+    as: "categorias",
+  });
+};
+
+
+  return Produto;
+};
