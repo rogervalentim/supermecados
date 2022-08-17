@@ -1,11 +1,10 @@
 *{
 	font-family: 'Montserrat';
 }
-nav {
+.nav-header {
 	background:black;
 	height: 80px;
 	width: 100%;
-	/* position: fixed; */
 }
 label.logo {
 	color:white;
@@ -14,16 +13,17 @@ label.logo {
 	padding: 0 100px;
 	font-weight: bold;
 }
-nav.header ul {
+
+.nav-header ul {
 	float: right;
 	margin-right: 20px;
 }
-nav.header ul li {
+.nav-header .header-link li {
 	display: inline-block;
 	line-height: 80px;
 	margin: 0 5px;
 }
-nav.header ul li a {
+.nav-header  .header-link li a {
 	color:white;
 	font-size: 17px;
 	padding: 7px 13px;
@@ -66,16 +66,26 @@ a.active, .a1:hover {
 		font-size: 30px;
 		padding-left: 50px;
 	}
+
+		.checkbtn {
+		display: block;
+	}
+
+	.header-link{
+		display:block;
+	}
 	
-	nav ul li a{
+	.nav-header .header-link li a{
 		font-size: 16px;
 	}
+
 }
+
 @media (max-width: 858px){
 	.checkbtn {
 		display: block;
 	}
-	ul{
+	.header-link{
 		position: fixed;
 		width: 100%;
 		height: 100vh;
@@ -86,19 +96,19 @@ a.active, .a1:hover {
 		transition: all .5s;
 	}
 	
-	nav ul li{
+	.nav-header .header-link li{
 		display: block;
 		margin: 50px 0;
 		line-height: 30px;
 	}
-	nav ul li a {
+	.nav-header .header-link li a {
 		font-size: 20px;
 	}
 	a:hover, a.active:hover, .a.active1  {
     
 		color:orangered;
 	}
-	#check:checked ~ ul {
+	#check:checked ~ .header-link {
 		left: 0;
 		background:black ;
 		
@@ -106,6 +116,7 @@ a.active, .a1:hover {
 	
 }
 @media (max-width:375px){
+  
 	.logo{
 		font-size: 15px;
 	}
@@ -137,8 +148,7 @@ a.active, .a1:hover {
 	#check:checked ~ ul {
 		left:0;
 		background:black ;
-		
+
 	}
-	
-	
+
 }

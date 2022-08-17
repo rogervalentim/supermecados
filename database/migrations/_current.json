@@ -84,6 +84,10 @@
                     "field": "descricao",
                     "seqType": "Sequelize.STRING"
                 },
+                "quantidade": {
+                    "field": "quantidade",
+                    "seqType": "Sequelize.INTEGER"
+                },
                 "imagem": {
                     "field": "imagem",
                     "seqType": "Sequelize.STRING"
@@ -103,5 +107,5 @@
             "indexes": []
         }
     },
-    "revision": 8
+    "revision": 9
 }

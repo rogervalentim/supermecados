@@ -6,8 +6,11 @@ const db = require('../../database/models')
 const productController = {
     index: async (req,res)=>{
        try{
+        const {slug} = req.params;
            const product = await db.Produto.findOne({
-               raw: true,
+               where:{
+                slug
+               }
            })
            console.log(product);
            res.render('internalProduct', {product});

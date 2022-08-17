@@ -18,7 +18,7 @@
 
     <main>
        
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="bottom:17px">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"  style="bottom:17px">
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img class="d-block w-100" src="/img/carrossel/banner-ofertas2.1.jpg" alt="First slide">
@@ -60,20 +60,24 @@
       
     
         <%- include('./partials/ofertas') %>
+    
+        <h1 class="home-title">SUPEROFERTAS</h1>
 
-        <h1 class="home">SUPEROFERTAS</h1>
         
-        <section id="produtos">
+        
+        <section class="produtos-container">
+          <section class="produtos">
           <% home.forEach(produto => { %>
             <div class="cartao">
               <img class="img-r" src="<%= produto.imagem%>">
               <div class="cartao-conteudo">
-              <p><a class="a3" href="/produto/<%= produto.id%>"><%= produto.produto %></a></p>
+              <p><a class="a3" href="/produto/<%= produto.slug%>"><%= produto.produto %></a></p>
               <span class="home"><%= produto.preco%></span>
               </div>
             </div>
           <% }) %>
-        </section>  
+        </section> 
+        </section>
         
 
            

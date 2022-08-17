@@ -59,6 +59,7 @@ const admProdutoController = {
             slug:$slug,
             preco:req.body.preco,
             categoria:req.body.categoria,
+            quantidade:req.body.quantidade,
             descricao:req.body.descricao,
             imagem: req.body.imagem,
          })
@@ -92,6 +93,7 @@ const admProdutoController = {
          slug:req.body.slug,
          preco:req.body.preco,
          categoria:req.body.categoria,
+         quantidade:req.body.quantidade,
          descricao:req.body.descricao
       
       },{

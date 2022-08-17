@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="/css/footer.css">
         <link rel="stylesheet" href="/css/animation.css">
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="../../js/carinho.js"></script>
     
     </head>
     <body>
@@ -26,14 +27,23 @@
                                     <img class="img-responsive" style="height:230px;margin-bottom: 20px;"  src="<%= products[i]['imagem']%>">
                                     <a class="prod-titulo"><%= products[i]['nome']%></a>
                                     <p class="prod-preco">R$ <%= products[i]['preco']%></p>
-
+                                   
+                                <button class="adicionar-produto" type="button" onclick="adicionarProduto({
+                                        slug:'<%= products[i].slug %>',
+                                        nome: '<%= products[i].nome %>',
+                                        preco: '<%= products[i].preco %>',
+                                        quantidade: '<%= products[i].quantidade %>',
+                                        categoria: '<%= products[i].categoria %>'
+                                })"
+                                >
+                                    adicionar
+                                </button>
                                 </div>
                             </a>
                         </div>
                      <% } %> 
                 </div>
             </div>
-
             <div class="geral">
                 <div class="row">
                     <% for(var i=0; i<products.length; i++) {%>
@@ -43,9 +53,16 @@
                                     <img class="img-responsive" style="height:230px;margin-bottom: 20px;"  src="<%= products[i]['imagem']%>">
                                     <a class="prod-titulo"><%= products[i]['nome']%></a>
                                     <p class="prod-preco">R$ <%= products[i]['preco']%></p>
-                                   
-
-
+                                    <button class="adicionar-produto" type="button" onclick="adicionarProduto({
+                                        slug:'<%= products[i].slug %>',
+                                        nome: '<%= products[i].nome %>',
+                                        preco: '<%= products[i].preco %>',
+                                        quantidade: '<%= products[i].quantidade %>',
+                                        categoria: '<%= products[i].categorias %>'
+                                })"
+                                >
+                                    adicionar
+                                </button>
                                 </div>
                             </a>
                         </div>
@@ -54,7 +71,7 @@
             </div>
             
         </div>
-        
+           
         <%- include('./partials/footer'); %>
     </body>
 </html>

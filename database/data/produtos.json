@@ -21,35 +21,35 @@
     },
 
     {
-    "produto":"Coxa Seara Congelada 1kg",
+    "produto":"Coxa Seara ",
     "preco":"R$9,99",
     "id":"4",
     "imagem":"/img/produtos/produto4.jpg"
     },
 
     {
-    "produto":"Linguiça Gourmet Seara",
+    "produto":"Linguiça Gourmet ",
     "preco":"R$21,95",
     "id":"5",
     "imagem":"/img/produtos/produto5.jpg"
     },
 
     {
-    "produto":"Lasanha Bolonhesa Sadia",
+    "produto":"Lasanha Bolonhesa ",
     "preco":"R$16,99",
     "id":"6", 
     "imagem":"/img/produtos/produto6.jpg"
     },
 
     {
-    "produto":"Peito de Frango Sadia 1kg",
+    "produto":"Peito de Frango",
     "preco":"R$21,95",
     "id":"7",
     "imagem":"/img/produtos/produto7.jpg"
     },
 
     {
-    "produto":"Salsicha Hot Dog Seara",
+    "produto":"Salsicha Hot Dog ",
     "preco":"R$9,90",
     "id":"8",
     "imagem":"/img/produtos/produto8.jpg"
@@ -77,14 +77,14 @@
     },
     
     {
-    "produto":"Iorgute Danone Desnatado 1,25Kg",
+    "produto":"Iorgute Danone ",
     "preco":"R$12,95",
     "id":"12",
     "imagem":"/img/produtos/produto12.jpg"
     },
 
     {
-    "produto":"Café Pilão Tradicional 500g",
+    "produto":"Café Pilão  500g",
     "preco":"R$17,98",
     "id":"13",
     "imagem":"/img/produtos/produto13.jpg"
@@ -98,63 +98,63 @@
     },
 
     {
-    "produto":"Leite em pó Molico desnatado 280g",
+    "produto":"Leite em pó Moico ",
     "preco":"R$14,49",
     "id":"15",
     "imagem":"/img/produtos/produto15.jpg"
     },
 
     {
-    "produto":"Chá Leão Matte 250g",
+    "produto":"Chá Leão",
     "preco":"R$7,99",
     "id":"16",
     "imagem":"/img/produtos/produto16.jpg"
     },
 
     {
-    "produto":"Arroz Tio João agulhinha tipo 1 1kg ",
+    "produto":"Arroz Tio João ",
     "preco":"R$4,98",
     "id":"17", 
     "imagem":"/img/produtos/produto17.jpg"
     },
 
     {
-    "produto":"Azeite extra virgem serrat 500ml ",
+    "produto":"Azeite  ",
     "preco":"R$22,99",
     "id":"18",
     "imagem":"/img/produtos/produto18.jpg"
     },
 
     {
-    "produto":"Macarrão Grano Duro 500g ",
+    "produto":"Macarrão Urbano ",
     "preco":"R$8,99",
     "id":"19",
     "imagem":"/img/produtos/produto19.jpg"
     },
 
     {
-    "produto":"Molho de Tomate Basilio 390 g ",
+    "produto":"Molho de Tomate ",
     "preco":"R$7,69",
     "id":"20",
     "imagem":"/img/produtos/produto20.jpg"
     },
 
     {
-    "produto":"Leite Condensado  lata 395g ",
+    "produto":"Leite Condensado ",
     "preco":"R$6,29",
     "id":"21",
     "imagem":"/img/produtos/produto21.jpg"
     },
 
     {
-    "produto":"Biscoito Maizena 200g",
+    "produto":"Biscoito Maizena ",
     "preco":"R$2,69",
     "id":"22",
     "imagem":"/img/produtos/produto22.jpg"
     },
 
     {
-    "produto":" Queijo Vigor Ralado 100g",
+    "produto":" Queijo Vigor Ralado",
     "preco":"R$8,99",
     "id":"23", 
     "imagem":"/img/produtos/produto23.jpg"
@@ -168,14 +168,14 @@
     },
 
     {
-    "produto":"Bombom Lacta 250,6g",
+    "produto":"Bombom Lacta ",
     "preco":"R$12,42",
     "id":"25", 
     "imagem":"/img/produtos/produto25.jpg"
     },
 
     {
-    "produto":"Chocolate Diamante Negro 90g",
+    "produto":" Diamante Negro ",
     "preco":"R$4,89",
     "id":"26",
     "imagem":"/img/produtos/produto26.jpg"

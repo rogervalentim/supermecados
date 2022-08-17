@@ -32,7 +32,25 @@
 	height: 350px;
 	border-radius: 20px;
   }
-  
+
+
+
+
+.adicionar-produto{
+    height: 30px;
+    border:none;
+    width:100%;
+    font-size:20px;
+    border-radius: 20px;
+    background-color:#F24726;
+    cursor: pointer;
+	color:white;
+}
+
+.adicionar-produto:hover{
+    background:#f58634;
+    color: white;
+}
   /* Responsive columns - one column layout (vertical) on small screens */
   @media screen and (max-width: 600px) {
 	.column {

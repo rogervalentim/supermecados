@@ -4,11 +4,11 @@
             "tableName": "categorias",
             "schema": {
                 "id_categoria": {
-                    "primaryKey": true,
                     "allowNull": false,
                     "autoIncrement": true,
+                    "primaryKey": true,
                     "field": "id_categoria",
-                    "seqType": "Sequelize.BIGINT(10).UNSIGNED"
+                    "seqType": "Sequelize.INTEGER"
                 },
                 "nome": {
                     "allowNull": false,
@@ -103,5 +103,5 @@
             "indexes": []
         }
     },
-    "revision": 7
+    "revision": 8
 }
