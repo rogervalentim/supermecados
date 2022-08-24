@@ -30,10 +30,15 @@ module.exports = (sequelize, dataTypes) => {
         type: dataTypes.STRING
       },
       fk_categoria:{
-        type: dataTypes.BIGINT(10).UNSIGNED,
-        }
+        type: dataTypes.BIGINT(10).UNSIGNED
+      },
+      promocao: {
+        type: dataTypes.INTEGER
+      },
+      preco_promocao: {
+        type: dataTypes.DECIMAL
       }
-     
+    }
       
     ,{
       tableName: "produtos",

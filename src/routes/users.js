@@ -5,7 +5,7 @@ var router = express.Router();
 /* GET login. */
 router.get('/', function(req, res, next) {
   if(req.session.login){
-    res.render('users\\index')
+    res.render('users/index')
   }else{
     res.redirect('/users/login')
   }
@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 
 /* GET login. */
 router.get('/login', function(req, res, next) {
-  res.render('users\\login');
+  res.render('users/login');
 });
 
 /* POST login. */
@@ -27,9 +27,9 @@ router.post('/login', function(req, res, next) {
   if (req.body.user_email == login && req.body.user_password == password) {
       // Logado com sucesso
       user = req.body.user_email;
-      res.render('users\\index', {user:user})
+      res.render('users/index', {user:user})
   }else{
-    res.render('users\\login')
+    res.render('users/login')
   }
 
 });
@@ -52,7 +52,7 @@ router.get('/logout', (req, res) => {
 
 /* GET cadastrar. */
 router.get('/cadastrar', function(req, res, next) {
-  res.render('users\\cadastrar');
+  res.render('users/cadastrar');
 });
 
 
