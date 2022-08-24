@@ -64,7 +64,7 @@ const admProdutoController = {
             imagem: req.body.imagem,
          })
 
-         console.log(result)
+         
          return res.redirect('/lista/produtos')
       }
       catch(err){
@@ -104,7 +104,6 @@ const admProdutoController = {
           
       })
    
-      console.log(resultado)
       res.redirect('/lista/produtos')
    
      } catch (err) {
@@ -122,7 +121,6 @@ const admProdutoController = {
          }
       
    })
-   console.log(result)
    res.redirect('/lista/produtos')
 
    try {
