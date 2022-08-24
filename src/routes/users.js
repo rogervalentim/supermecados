@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+
 /* GET login. */
 router.get('/', function(req, res, next) {
   if(req.session.login){
@@ -16,6 +17,7 @@ router.get('/login', function(req, res, next) {
   res.render('users\\login');
 });
 
+/* POST login. */
 router.post('/login', function(req, res, next) {
 
   // TODO:Substituir por busca no banco
@@ -32,6 +34,7 @@ router.post('/login', function(req, res, next) {
 
 });
 
+/* GET Logout */
 router.get('/logout', (req, res) => {
   if (req.session.login) {
     req.session.destroy(err => {
@@ -45,5 +48,17 @@ router.get('/logout', (req, res) => {
     res.redirect('/users')
   }
 })
+
+
+/* GET cadastrar. */
+router.get('/cadastrar', function(req, res, next) {
+  res.render('users\\cadastrar');
+});
+
+
+// alterar
+// router.get('/alterar/:id',admProdutoController.edit)
+// router.put('/alterar/:id',admProdutoController.update)
+
 
 module.exports = router;
