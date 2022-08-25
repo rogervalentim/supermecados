@@ -4,23 +4,25 @@ const admProdutoController = {
    list: async (req,res)=>{
       try{
          const produtos = await Produto.findAll({
-         include:{      
-            model:Categoria,
-            required: true,
-            as:"categorias"
-         }
-            })
+            include:{      
+               model:Categoria,
+               required: true,
+               as:"categorias"
+            }
+         })
       
-         console.log(produtos)
-         return res.render('produtos/produtoListar',{produtos})
+         return res.render('produtos/produtoListar',{produtos, })
       }
       catch(err){
          console.log(err)
       }
    },
 
-   create:(req,res)=>{
-      return res.render('produtos/produtoCadastrar')
+   create:async(req,res)=>{
+
+      const categorias = await Categoria.findAll();
+
+      return res.render('produtos/produtoCadastrar',{categorias})
    },
 
    store:async (req,res)=>{
@@ -58,8 +60,8 @@ const admProdutoController = {
             nome:req.body.nome,
             slug:$slug,
             preco:req.body.preco,
-            categoria:req.body.categoria,
-            quantidade:req.body.quantidade,
+            fk_categoria:req.body.categoria,
+            quantidade:0,
             descricao:req.body.descricao,
             imagem: req.body.imagem,
          })
@@ -75,13 +77,17 @@ const admProdutoController = {
    },
 
    edit:async (req,res)=>{
-    try {
-      const {id} = req.params
-      const produto = await Produto.findByPk(id)
-      return res.render ('produtos/produtoAtualizar',{produto})
-    } catch (error) {
-      console.log(err)
-    }
+      try {
+         const {id} = req.params
+         const produto = await Produto.findByPk(id)
+
+         const categorias = await Categoria.findAll();
+
+         return res.render ('produtos/produtoAtualizar',{produto, categorias})
+
+      } catch (error) {
+         console.log(err)
+      }
    },
    update:async (req,res)=>{
      
