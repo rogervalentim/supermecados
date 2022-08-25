@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+const admClienteController=require('../controllers/admClienteController')
+
 
 /* GET login. */
 router.get('/', function(req, res, next) {
@@ -49,16 +51,17 @@ router.get('/logout', (req, res) => {
   }
 })
 
+//criar
+router.get('/cadastrar',admClienteController.create)
 
-/* GET cadastrar. */
-router.get('/cadastrar', function(req, res, next) {
-  res.render('users/cadastrar');
-});
+// salvar
+router.post('/cadastrar',admClienteController.store)
 
+// Perfil
+router.get('/perfil/:id',admClienteController.edit)
+router.put('/alterar/:id',admClienteController.update)
 
-// alterar
-// router.get('/alterar/:id',admProdutoController.edit)
-// router.put('/alterar/:id',admProdutoController.update)
-
+// deletar
+router.delete('/deletar/:id',admClienteController.destroy)
 
 module.exports = router;

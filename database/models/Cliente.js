@@ -17,6 +17,10 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.STRING(15),
       allowNull: false
     },
+    senha: {
+      type: dataTypes.STRING(15),
+      allowNull: false
+    },
     ativo: {
       type: dataTypes.BOOLEAN,
       allowNull: false

@@ -6,6 +6,7 @@
 	<title>Novo Usuário</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/css/estilo.css">
+	<link rel="stylesheet" href="/css/footer.css">
 
 	<link rel="stylesheet" href="/css/header.css">
 	<link rel="stylesheet" href="/css/cadastrar.css">
@@ -21,17 +22,17 @@
 
 	<h1 class="titulo">Cadastrar Novo Usuário</h1>
 	<div class="cadastro">
-		<form action="/cadastrar" method="Post">
+		<form action="/users/cadastrar" method="Post">
 			<div class="field">
 				<label class="l1" for="nome"><strong>Nome</strong></label>
 				<input class="campo" type="text" id="nome" name="nome">
 			</div>
 			<div class="field">
-				<label class="l1" for="email"><strong>email</strong></label>
+				<label class="l1" for="email"><strong>E-mail</strong></label>
 				<input class="campo" type="email" id="email" name="email">
 			</div>
 			<div class="field">
-				<label class="l1" for="senha"><strong>senha</strong></label>
+				<label class="l1" for="senha"><strong>Senha</strong></label>
 				<input class="campo" type="password" id="senha" name="senha">
 			</div>
 			<button class="bt-cadastro" type="submit">cadastrar</button>
