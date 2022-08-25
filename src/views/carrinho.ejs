@@ -11,13 +11,25 @@
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/carrinho.css">
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
     
 </head>
-<main> 
-    <h1 class="carrinho">Meu Carrinho</h1>
-    <h1 class="carrinho1">Seu Carrinho está vazio.</h1>
-    <span class="text">Para continuar comprando, navegue pelas categorias do site ou faça uma busca pelo seu produto.</span>
-    <div class="bloco">
-    <button class="botao-r"><a class="ln" href='/'>Escolher Produtos</a></button>
-    </div>
-</main>
+<% carrinho.forEach(function(produto){ %>
+    <section id="carrinho-container">
+        <div id="carrinho">
+            <% carrinho.forEach(function(produto){ %>
+              <div class='produto'>
+                  <p>
+                    <img src='<%=produto.imagem%>'  />
+                  </p>
+                  <p><%=produto.nome%></p>
+                  <p><%=produto.preco%></p>
+                  <p><b>Quantidade:</b><%=produto.quantidade%></p>
+                  <p><button onclick="remover({slug: '<%=produto.slug%>', quantidade:1, nome:'<%=produto.nome%>', valor:<%=produto.preco%>})">Excluir</button></p>
+            <% }) %>
+          </div>
+    </section>
+    <% }) %>
+    <%- include('./partials/carrinho'); %>
+
+</body>

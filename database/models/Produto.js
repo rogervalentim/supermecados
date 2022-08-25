@@ -54,5 +54,7 @@ Produto.associate = (models) => {
 };
 
 
+
+
   return Produto;
 };

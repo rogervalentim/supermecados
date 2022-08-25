@@ -10,7 +10,6 @@
         <link rel="stylesheet" href="/css/footer.css">
         <link rel="stylesheet" href="/css/animation.css">
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-        <script src="../../js/carinho.js"></script>
     
     </head>
     <body>
@@ -28,11 +27,11 @@
                                     <a class="prod-titulo"><%= products[i]['nome']%></a>
                                     <p class="prod-preco">R$ <%= products[i]['preco']%></p>
                                    
-                                <button class="adicionar-produto" type="button" onclick="adicionarProduto({
+                                <button class="adicionar-produto" type="button" onclick="adicionar({
                                         slug:'<%= products[i].slug %>',
                                         nome: '<%= products[i].nome %>',
                                         preco: '<%= products[i].preco %>',
-                                        quantidade: '<%= products[i].quantidade %>',
+                                        quantidade:1,
                                         categoria: '<%= products[i].categorias.nome %>'
                                 })"
                                 >
@@ -53,11 +52,11 @@
                                     <img class="img-responsive" style="height:230px;margin-bottom: 20px;"  src="<%= products[i]['imagem']%>">
                                     <a class="prod-titulo"><%= products[i]['nome']%></a>
                                     <p class="prod-preco">R$ <%= products[i]['preco']%></p>
-                                    <button class="adicionar-produto" type="button" onclick="adicionarProduto({
+                                    <button class="adicionar-produto" type="button" onclick="adicionar({
                                         slug:'<%= products[i].slug %>',
                                         nome: '<%= products[i].nome %>',
                                         preco: '<%= products[i].preco %>',
-                                        quantidade: '<%= products[i].quantidade %>',
+                                        quantidade:1 ,
                                         categoria: '<%= products[i].categorias %>'
                                 })"
                                 >
@@ -71,7 +70,8 @@
             </div>
             
         </div>
-           
+
+        <%- include('./partials/carrinho'); %>
         <%- include('./partials/footer'); %>
     </body>
 </html>

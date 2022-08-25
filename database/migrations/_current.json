@@ -1,5 +1,48 @@
 {
     "tables": {
+        "carrinho": {
+            "tableName": "carrinho",
+            "schema": {
+                "id_carrinho": {
+                    "allowNull": false,
+                    "autoIncrement": true,
+                    "primaryKey": true,
+                    "field": "id_carrinho",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "fk_produto": {
+                    "field": "fk_produto",
+                    "allowNull": true,
+                    "references": {
+                        "model": "produtos",
+                        "key": "id_produto"
+                    },
+                    "onDelete": "NO ACTION",
+                    "onUpdate": "CASCADE",
+                    "seqType": "Sequelize.BIGINT(10).UNSIGNED"
+                },
+                "nome": {
+                    "allowNull": false,
+                    "field": "nome",
+                    "seqType": "Sequelize.STRING(100)"
+                },
+                "preco": {
+                    "allowNull": false,
+                    "field": "preco",
+                    "seqType": "Sequelize.DECIMAL"
+                },
+                "quantidade": {
+                    "allowNull": false,
+                    "field": "quantidade",
+                    "seqType": "Sequelize.DECIMAL"
+                },
+                "imagem": {
+                    "field": "imagem",
+                    "seqType": "Sequelize.STRING"
+                }
+            },
+            "indexes": []
+        },
         "categorias": {
             "tableName": "categorias",
             "schema": {
@@ -36,6 +79,11 @@
                 "email": {
                     "allowNull": false,
                     "field": "email",
+                    "seqType": "Sequelize.STRING(15)"
+                },
+                "senha": {
+                    "allowNull": false,
+                    "field": "senha",
                     "seqType": "Sequelize.STRING(15)"
                 },
                 "ativo": {
@@ -102,10 +150,18 @@
                     "onDelete": "NO ACTION",
                     "onUpdate": "CASCADE",
                     "seqType": "Sequelize.BIGINT(10).UNSIGNED"
+                },
+                "promocao": {
+                    "field": "promocao",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "preco_promocao": {
+                    "field": "preco_promocao",
+                    "seqType": "Sequelize.DECIMAL"
                 }
             },
             "indexes": []
         }
     },
-    "revision": 9
+    "revision": 12
 }
