@@ -51,11 +51,9 @@ const admProdutoController = {
          return str;
       }
 
-
       $slug = slugify(req.body.nome);
 
       try{
-         
          const result= await Produto.create({
             nome:req.body.nome,
             slug:$slug,
@@ -66,14 +64,22 @@ const admProdutoController = {
             imagem: req.body.imagem,
          })
 
+         const produtos = await Produto.findAll({
+            include:{      
+               model:Categoria,
+               required: true,
+               as:"categorias"
+            }
+         })
+
+         let message = "Produto Cadastrado com Sucesso!" ;
+         let type = "success" ;
          
-         return res.redirect('/lista/produtos')
+         return res.render('produtos/produtoListar',{produtos, message, type})
       }
       catch(err){
          console.log(err)
       }
-   
-   
    },
 
    edit:async (req,res)=>{
@@ -89,8 +95,8 @@ const admProdutoController = {
          console.log(err)
       }
    },
-   update:async (req,res)=>{
-     
+
+   update:async (req,res)=>{  
      try {
       const {id} = req.params 
       const resultado= await Produto.update({
@@ -98,7 +104,7 @@ const admProdutoController = {
          nome:req.body.nome,
          slug:req.body.slug,
          preco:req.body.preco,
-         categoria:req.body.categoria,
+         fk_categoria:req.body.categoria,
          quantidade:req.body.quantidade,
          descricao:req.body.descricao
       
@@ -110,7 +116,18 @@ const admProdutoController = {
           
       })
    
-      res.redirect('/lista/produtos')
+      const produtos = await Produto.findAll({
+         include:{      
+            model:Categoria,
+            required: true,
+            as:"categorias"
+         }
+      })
+
+      let message = "Produto Atualizado com Sucesso!" ;
+      let type = "success" ;
+         
+      return res.render('produtos/produtoListar',{produtos, message, type})
    
      } catch (err) {
       console.log(err)
@@ -119,22 +136,35 @@ const admProdutoController = {
    
    },
    destroy:async (req,res)=>{
-   const {id} =req.params
-   const result= await Produto.destroy({
-      
-         where:{
-         id_produto:id
-         }
-      
-   })
-   res.redirect('/lista/produtos')
 
-   try {
-      
-   } catch (err) {
-   console.log(err)
-   }
-   }
+      try {
+
+         const {id} =req.params
+         const produto = await Produto.findByPk(id)
+
+         const result= await Produto.destroy({
+               where:{
+               id_produto:id
+               }
+         })
+
+         const produtos = await Produto.findAll({
+            include:{      
+               model:Categoria,
+               required: true,
+               as:"categorias"
+            }
+         })
+
+         let message = "Produto " + produto.nome + " deletado com Sucesso!" ;
+         let type = "success" ;
+            
+         return res.render('produtos/produtoListar',{produtos, message, type})
+         
+      } catch (err) {
+         console.log(err)
+      }
+      }
 
 }
   
