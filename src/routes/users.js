@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 const admClienteController=require('../controllers/admClienteController')
+const {Cliente} = require("../../database/models");
 
 
 /* GET login. */
@@ -20,13 +21,18 @@ router.get('/login', function(req, res, next) {
 });
 
 /* POST login. */
-router.post('/login', function(req, res, next) {
+router.post('/login', async function(req, res, next) {
 
-  // TODO:Substituir por busca no banco
-  var login = 'teste';
-  var password = '123';
+  const cliente = await Cliente.findAll({
+    where: {
+      email: req.body.user_email,
+      senha: req.body.user_password
+    }
+  })
 
-  if (req.body.user_email == login && req.body.user_password == password) {
+  console.log(cliente.length);
+
+  if (cliente.length > 0) {
       // Logado com sucesso
       user = req.body.user_email;
       res.render('users/index', {user:user})
