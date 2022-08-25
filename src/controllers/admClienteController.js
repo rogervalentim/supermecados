@@ -15,7 +15,11 @@ const admClienteController = {
             ativo: 1,
          })
 
-         return res.redirect('/users/login')
+         let message = "Usuário cadastrado com sucesso!" ;
+         let type = "success" ;
+   
+         res.render('users/login', {message, type})
+    
       }
       catch(err){
          console.log(err)
@@ -26,6 +30,7 @@ const admClienteController = {
     try {
       const {id} = req.params
       const cliente = await Cliente.findByPk(id)
+
       return res.render ('users/atualizar',{cliente})
     } catch (error) {
       console.log(err)
@@ -36,7 +41,7 @@ const admClienteController = {
      
      try {
       const {id} = req.params 
-      
+
       const resultado= await Cliente.update({
          nome:req.body.nome,
          email:req.body.email,
@@ -47,7 +52,12 @@ const admClienteController = {
          }
       })
    
-      res.redirect('/users/login')
+      const cliente = await Cliente.findByPk(id)
+      constId = cliente.id
+      let message = "Usuário atualizado com sucesso!" ;
+      let type = "success" ;
+   
+      return res.render('users/atualizar',{cliente, message, type})
    
      } catch (err) {
       console.log(err)
@@ -65,9 +75,13 @@ const admClienteController = {
             id:id
          }
       })
+
+      let message = "Usuário deletado com sucesso!" ;
+      let type = "success" ;
+
       
-      res.redirect('/users/login')
-   
+      res.render('users/login', {message, type})
+
    } catch (err) {
       console.log(err)
    }

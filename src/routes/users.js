@@ -26,18 +26,23 @@ router.post('/login', async function(req, res, next) {
   const cliente = await Cliente.findAll({
     where: {
       email: req.body.user_email,
-      senha: req.body.user_password
+      senha: req.body.user_password,
+      ativo: 1
     }
   })
 
-  console.log(cliente.length);
-
   if (cliente.length > 0) {
-      // Logado com sucesso
+    // Logado com sucesso
+      let message = "Logado com sucesso!" ;
+      let type = "success" ;
+
       user = req.body.user_email;
-      res.render('users/index', {user:user})
+      res.render('users/index', {user:user, message, type})
   }else{
-    res.render('users/login')
+    let message = "Falha ao logar, verifique se os dados estão corretos" ;
+    let type = "danger" ;
+    
+    res.render('users/login', {message, type})
   }
 
 });

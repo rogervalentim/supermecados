@@ -19,6 +19,12 @@
 	<!-- header -->
 	<%- include('../partials/header') %>
 
+	<% if(!(typeof message == 'undefined')){ %>
+		<div class="alert alert-<%= type %>" role="alert">
+			<%= message %>
+		</div>
+	 <% } %>
+
 	<h1 class="titulo">Perfil do Usuário</h1>
 	<div class="cadastro">
 		<h3 class="p-3">Alterar Dados</h3>
