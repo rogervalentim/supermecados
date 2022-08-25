@@ -24,7 +24,7 @@ module.exports = (sequelize, dataTypes) => {
         type:dataTypes.STRING
       },
       quantidade:{
-        type: dataTypes.INTEGER
+       type:dataTypes.INTEGER
       },
       imagem: {
         type: dataTypes.STRING

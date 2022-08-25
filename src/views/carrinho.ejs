@@ -13,11 +13,43 @@
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
     
 </head>
-<main> 
-    <h1 class="carrinho">Meu Carrinho</h1>
-    <h1 class="carrinho1">Seu Carrinho está vazio.</h1>
-    <span class="text">Para continuar comprando, navegue pelas categorias do site ou faça uma busca pelo seu produto.</span>
-    <div class="bloco">
-    <button class="botao-r"><a class="ln" href='/'>Escolher Produtos</a></button>
-    </div>
+<body>
+ <main> 
+     <!-- <section id="conteudo-carrinho" class="conteudo-carrinho">
+        <h1 class="carrinho">Meu Carrinho</h1>
+        <h1 class="carrinho1">Seu Carrinho está vazio.</h1>
+        <span class="text">Para continuar comprando, navegue pelas categorias do site ou faça uma busca pelo seu produto.</span>
+        <div class="bloco">
+        <button class="botao-r"><a class="ln" href='/produtos'>Escolher Produtos</a></button>
+        </div>
+        </section>  -->
+  
+    <% carrinho.forEach(function(produto){ %>
+    <section id="carrinho" class="carrinho"> 
+    <!-- <img class="img-responsive" style="height:230px;margin-bottom: 20px;"  src= <%= produto.imagem %>>
+    <a class="prod-titulo"><%= produto.nome %></a>
+    <p class="prod-preco">R$ <%= produto.preco %></p>
+    <p id="quantidade" class="quantidade"><%= produto.quantidade %></p> -->
+    
+     <button class="remover-produto" type="button" onclick="removerProduto({
+        slug:<%= produto.slug %>,
+        nome:<%= produto.nome %>,
+        preco: <%= produto.preco %>,
+        quantidade:1,
+})">
+remover
+</button> 
+</div>
+</a>
+</div>
+
+    </section>
+    <% }) %>
+
+
+<!-- <%- include('./partials/footer') %> -->
+
+<%- include('partials/script') %>
+<script src="/js/carrinhoPagina.js"></script>
 </main>
+    </body>

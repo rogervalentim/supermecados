@@ -38,14 +38,15 @@
 
 .adicionar-produto{
     height: 30px;
+	width:100%;
     border:none;
-    width:100%;
-    font-size:20px;
-    border-radius: 20px;
+	transition: all 0.3s ease-in-out;
     background-color:#F24726;
     cursor: pointer;
 	color:white;
 }
+
+
 
 .adicionar-produto:hover{
     background:#f58634;

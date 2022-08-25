@@ -12,7 +12,6 @@
 
 .home-title{
 	color:gray;
-    /* margin-left:100px; */
 	margin-top: 100px;
 	border-bottom:1px solid gray;
 }
@@ -42,7 +41,6 @@
 
 
 .produtos-container {
-	/* margin-left: 20px; */
 	margin-top:10px;
     display:flex;
 	justify-content:space-around;

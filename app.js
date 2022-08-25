@@ -6,7 +6,10 @@ var path = require('path');
 var methodOverride = require('method-override')
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var mainRouter = require('./src/routes/main');
+var homeRouter = require('./src/routes/home');
+var cartRouter = require('./src/routes/cart');
+var productsRouter = require('./src/routes/products');
+var productRouter = require('./src/routes/product');
 var usersRouter = require('./src/routes/users');
 
 var app = express();
@@ -25,8 +28,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({secret:'abcde', resave: true, saveUninitialized: true}));
 app.use(methodOverride('_method'))
 
-app.use('/', mainRouter);
+app.use('/', homeRouter);
 app.use('/users', usersRouter);
+app.use('/carrinho',cartRouter);
+app.use('/produtos',productsRouter);
+app.use('/' , productRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
