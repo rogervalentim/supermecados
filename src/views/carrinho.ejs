@@ -14,22 +14,15 @@
 
     
 </head>
-<% carrinho.forEach(function(produto){ %>
     <section id="carrinho-container">
-        <div id="carrinho">
-            <% carrinho.forEach(function(produto){ %>
-              <div class='produto'>
-                  <p>
-                    <img src='<%=produto.imagem%>'  />
-                  </p>
-                  <p><%=produto.nome%></p>
-                  <p><%=produto.preco%></p>
-                  <p><b>Quantidade:</b><%=produto.quantidade%></p>
-                  <p><button onclick="remover({slug: '<%=produto.slug%>', quantidade:1, nome:'<%=produto.nome%>', valor:<%=produto.preco%>})">Excluir</button></p>
-            <% }) %>
-          </div>
-    </section>
-    <% }) %>
-    <%- include('./partials/carrinho'); %>
-
+            <div id="carrinho">
+                  <div class='produto'>
+                      <p>
+                        </p>
+                     
+              </div>
+              <%- include('partials/carrinho') %>
+              <script src='/js/exibirCarrinho.js'></script>
+              
+    
 </body>

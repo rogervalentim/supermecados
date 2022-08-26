@@ -1,28 +1,28 @@
+// const { itemPedido, Pedido} = require("../../database/models");
 
-const {Produto,Categoria} = require("../../database/models");
-const carrinhoController ={
-index: async (req,res)=>{
-   try{
-   const carrinho = await Produto.findAll({
-      include:{      
-         model:Categoria,
-         required: true,
-         as:"categorias"
-      },
-   })
+const carrinhoController = {
+  
+  async adicionarProdutoCarrinho(req, res) {
+    const { id_produto, nome,preco,imagem  } = req.body;
+    const { carrinho } = req.session;
+    const products = {
+      id: id_produto,
+      nome,
+      preco,
+      imagem
 
-   return res.render('carrinho',{carrinho})
-}
-   catch(error){
-      console.log(error)
-   }
+    };
 
-}
+   
 
+    if (req.session.carrinho) {
+      req.session.carrinho.push(products);
+    } else {
+      req.session.carrinho= [products];
+    }
+    res.render("carrinho", {carrinho});
+    
+  },
+};
 
-}
-
-
-
-
-module.exports=carrinhoController;
+module.exports = carrinhoController;
