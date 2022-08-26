@@ -86,11 +86,12 @@ a.active, .a1:hover {
 		display: block;
 	}
 	.header-link{
+		z-index: 1;
 		position: fixed;
 		width: 100%;
 		height: 100vh;
 		background:none;
-		top: 80px;
+		top: 70px;
 		left: -100%;
 		text-align: center;
 		transition: all .5s;
