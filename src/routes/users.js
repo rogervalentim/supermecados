@@ -7,18 +7,14 @@ const bcrypt = require("bcrypt");
 
 
 /* GET login. */
-router.get('/', function(req, res, next) {
+router.get('/login', function(req, res, next) {
+
   if(req.session.login){
     res.render('users/index')
   }else{
-    res.redirect('/users/login')
+    res.render('users/login')
   }
 
-});
-
-/* GET login. */
-router.get('/login', function(req, res, next) {
-  res.render('users/login');
 });
 
 /* POST login. */
@@ -35,11 +31,14 @@ router.post('/login', async function(req, res, next) {
 
   if (isValid) {
     // Logado com sucesso
-      let message = "Logado com sucesso!" ;
-      let type = "success" ;
+    req.session.login = cliente.email
 
-      user = req.body.user_email;
-      res.render('users/index', {user:user, message, type})
+    let message = "Logado com sucesso!" ;
+    let type = "success" ;
+    
+    user = req.body.user_email;
+    res.render('users/index', {user:user, message, type})
+      
   }else{
     let message = "Falha ao logar, verifique se os dados estão corretos" ;
     let type = "danger" ;
