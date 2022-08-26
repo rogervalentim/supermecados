@@ -1,5 +1,7 @@
 
 const {Cliente} = require("../../database/models");
+const bcrypt = require("bcrypt");
+
 const admClienteController = {
    create:(req,res)=>{
       return res.render('users/cadastrar');
@@ -7,11 +9,14 @@ const admClienteController = {
 
    store:async (req,res)=>{
       try{
+
+         const salt = 10;
+         $password = await bcrypt.hash(req.body.senha, salt);
          
          const result= await Cliente.create({
             nome:req.body.nome,
             email:req.body.email,
-            senha: req.body.senha,
+            senha: $password,
             ativo: 1,
          })
 
@@ -40,12 +45,16 @@ const admClienteController = {
    update:async (req,res)=>{
      
      try {
+
+      const salt = await bcrypt.genSalt();
+      $password = await bcrypt.hash(req.body.senha, salt);
+
       const {id} = req.params 
 
       const resultado= await Cliente.update({
          nome:req.body.nome,
          email:req.body.email,
-         senha: req.body.senha,
+         senha: $password,
       },{
          where:{
             id:id

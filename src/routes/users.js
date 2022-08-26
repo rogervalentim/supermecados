@@ -3,6 +3,7 @@ var router = express.Router();
 
 const admClienteController=require('../controllers/admClienteController')
 const {Cliente} = require("../../database/models");
+const bcrypt = require("bcrypt");
 
 
 /* GET login. */
@@ -23,15 +24,16 @@ router.get('/login', function(req, res, next) {
 /* POST login. */
 router.post('/login', async function(req, res, next) {
 
-  const cliente = await Cliente.findAll({
+  const cliente = await Cliente.findOne({
     where: {
       email: req.body.user_email,
-      senha: req.body.user_password,
       ativo: 1
     }
   })
+  
+  const isValid = await bcrypt.compare(req.body.user_password, cliente.senha);
 
-  if (cliente.length > 0) {
+  if (isValid) {
     // Logado com sucesso
       let message = "Logado com sucesso!" ;
       let type = "success" ;
