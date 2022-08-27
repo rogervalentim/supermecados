@@ -1,19 +1,19 @@
 
 function adicionar(novoItem) {
-  console.log('Item novoItem:', { novoItem });
+  // console.log('Item novoItem:', { novoItem });
   const carrinho = localStorage.getItem('carrinho')
     ? JSON.parse(localStorage.getItem('carrinho'))
     : [];
 
-  console.log('O carrinho:', { novoItem, carrinho });
+  console.log(carrinho.find((p) => p?.slug == novoItem.slug));
 
-  if (carrinho.find((p) => p?.id == novoItem.id)) {
-    console.log('achou...', novoItem.quantidade);
+  if (carrinho.find((p) => p?.slug == novoItem.slug)) {
+    // console.log('achou...', novoItem.quantidade);
     novoItem.quantidade += carrinho.find(
-      (p) => p?.id === novoItem.id
+      (p) => p?.slug === novoItem.slug
     ).quantidade;
   }
-  const copia = [novoItem, ...carrinho.filter((p) => p?.id !== novoItem.id)];
+  const copia = [novoItem, ...carrinho.filter((p) => p?.slug !== novoItem.slug)];
 
   localStorage.setItem('carrinho', JSON.stringify(copia));
 
@@ -27,7 +27,7 @@ function remover(itemCarrinho) {
     : [];
 
   // Alterar a quantidade
-  const produtoNoCarrinho = carrinho.find((p) => p.id === itemCarrinho.id);
+  const produtoNoCarrinho = carrinho.find((p) => p.slug === itemCarrinho.slug);
   if (produtoNoCarrinho) {
     //Alterar a quantidade1
     produtoNoCarrinho.quantidade = produtoNoCarrinho.quantidade - 1;
@@ -39,6 +39,7 @@ function remover(itemCarrinho) {
   //Atualizar o cookie ou do localStorage com o novo carrinho
   localStorage.setItem('carrinho', JSON.stringify(copiaCarrinho));
 
+  console.log(JSON.stringify(carrinho));
   exibirCarrinho();
 }
 

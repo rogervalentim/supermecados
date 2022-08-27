@@ -9,6 +9,13 @@ const bcrypt = require("bcrypt");
 /* GET login. */
 router.get('/login', function(req, res, next) {
 
+  if (req.query.code == 1) {
+    let message = "Faça login para continuar a compra" ;
+    let type = "danger" ;
+    
+    return res.render('users/login', {message, type})
+  }
+  
   if(req.session.login){
     res.render('users/index')
   }else{

@@ -6,6 +6,7 @@ const productController= require('../controllers/productController');
 const finalizacaoController= require('../controllers/finalizacaoController');
 const clienteController= require('../controllers/clienteController');
 const admProdutoController=require('../controllers/admProdutoController');
+const carrinhoController=require('../controllers/carrinhoController');
 
 /* GET home page. */
 router.get('/',homeController.index)
@@ -42,10 +43,17 @@ router.put('/alterar/:id',admProdutoController.update)
 //deletar
 router.delete('/deletar/:id',admProdutoController.destroy)
 
+// Salvar Compra
 
+router.post('/api/carrinho/comprar', carrinhoController.save)
 
+// router.post('/api/carrinho/comprar', (req, res) => {
+//     const retorno = req.body;
+//     console.log('CHEGUEI: ',  req.body);
+//     return res.json("retorno api = "+retorno);
 
-
-
+//     // retorno.forEach(element => {
+//     // });
+// });
 
 module.exports = router;
