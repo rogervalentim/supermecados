@@ -54,36 +54,25 @@ function exibirCarrinho() {
   carrinhoTela.innerHTML = '';
   carrinho.forEach((produto) => {
     carrinhoTela.innerHTML += `  
-                                <div class='produto'>
-                                `;
-    carrinhoTela.innerHTML += `  
-                                  <p>
-                                      <img src='${produto.imagem}' />
-                                </p>`;
-    carrinhoTela.innerHTML += `  
-                                  <p>
-                                      Nome: ${produto.nome}
-                                  </p>`;
-    carrinhoTela.innerHTML += `  
-                                  <p>
-                                      Valor: R$ ${produto.preco}
-                                  </p>`;
-    carrinhoTela.innerHTML += `  
-                                  <p>
-                                      Quantidade: ${produto.quantidade}
-                                  </p>`;
-    carrinhoTela.innerHTML += `  
-                                  <p>
-                                      Subtotal: R$ ${
-                                        produto.quantidade * produto.preco
-                                      }
-                                  </p>`;
-    carrinhoTela.innerHTML += `  
-                                  <p>
-                                      <button class="btn-carrinho" onclick="remover({slug:'${produto.slug}', nome:'${produto.nome}'})">Remover </button>
-                                  </p>`;
-
-    carrinhoTela.innerHTML += `</div>`;
+      <div class="card col-4"><div class='produto'>                                
+            <img class="img-fluid" src='${produto.imagem}' />
+        <p>
+            Nome: ${produto.nome}
+        </p>
+        <p>
+            Valor: R$ ${produto.preco}
+        </p>
+        <p>
+            Quantidade: ${produto.quantidade}
+        </p>
+        <p>
+            Subtotal: R$ ${
+              produto.quantidade * produto.preco
+            }
+        </p>
+        <p>
+            <button class="btn-carrinho btn btn-danger" onclick="remover({slug:'${produto.slug}', nome:'${produto.nome}'})">Remover </button>
+        </p></div></div>`;
   });
 
   if (!carrinho.length) {
