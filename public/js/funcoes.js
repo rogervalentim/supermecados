@@ -54,25 +54,16 @@ function exibirCarrinho() {
   carrinhoTela.innerHTML = '';
   carrinho.forEach((produto) => {
     carrinhoTela.innerHTML += `  
-      <div class="card col-4"><div class='produto'>                                
-            <img class="img-fluid" src='${produto.imagem}' />
-        <p>
-            Nome: ${produto.nome}
-        </p>
-        <p>
-            Valor: R$ ${produto.preco}
-        </p>
-        <p>
-            Quantidade: ${produto.quantidade}
-        </p>
-        <p>
-            Subtotal: R$ ${
-              produto.quantidade * produto.preco
-            }
-        </p>
-        <p>
-            <button class="btn-carrinho btn btn-danger" onclick="remover({slug:'${produto.slug}', nome:'${produto.nome}'})">Remover </button>
-        </p></div></div>`;
+      <div class="card p-3 m-3 text-center" style="width: 18rem;">
+        <img class="card-img-top" src="${produto.imagem}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">${produto.nome}</h5>
+          <p class="card-text">Quantidade: ${produto.quantidade}</p>
+          <p class="card-text">Subtotal: R$ ${produto.quantidade * produto.preco}</p>
+          <button class="btn-carrinho btn btn-danger" onclick="remover({slug:'${produto.slug}', nome:'${produto.nome}'})">Remover </button>
+        </div>
+      </div>
+      `;
   });
 
   if (!carrinho.length) {
