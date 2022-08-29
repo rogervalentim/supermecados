@@ -77,12 +77,13 @@ function exibirCarrinho() {
 
   if (!carrinho.length) {
     carrinhoTela.innerHTML += `  
+    <div class="container text-center mt-5 mx-auto">
     <h1 class="carrinho">Meu Carrinho</h1>
     <h1 class="carrinho1">Seu Carrinho está vazio.</h1>
     <span class="text">Para continuar comprando, navegue pelas categorias do site ou faça uma busca pelo seu produto.</span>
     <div class="bloco">
     <button class="botao-r"><a class="ln" href='/produtos'>Escolher Produtos</a></button>
-    </div>
+    </div></div>
   `
   }
 }
