@@ -2,12 +2,12 @@
 const {Produto,Categoria} = require("../../database/models");
 const admProdutoController = {
    list: async (req,res)=>{
-      // if (req.session.login != 'nova@gmail.com') {
-      //    let message = "É preciso estar logado como administrador para visualizar esta página" ;
-      //    let type = "danger" ;
+      if (req.session.login != 'adm@gmail.com') {
+         let message = "É preciso estar logado como administrador para visualizar esta página" ;
+         let type = "danger" ;
          
-      //    res.render('users/login', {message, type})
-      // }
+         res.render('users/login', {message, type})
+      }
       try{
          const produtos = await Produto.findAll({
             include:{      
@@ -26,12 +26,12 @@ const admProdutoController = {
 
    create:async(req,res)=>{
 
-      // if (req.session.login != 'nova@gmail.com') {
-      //    let message = "É preciso estar logado como administrador para visualizar esta página" ;
-      //    let type = "danger" ;
+      if (req.session.login != 'adm@gmail.com') {
+         let message = "É preciso estar logado como administrador para visualizar esta página" ;
+         let type = "danger" ;
          
-      //    res.render('users/login', {message, type})
-      // }
+         res.render('users/login', {message, type})
+      }
 
       const categorias = await Categoria.findAll();
 
@@ -97,12 +97,12 @@ const admProdutoController = {
 
    edit:async (req,res)=>{
 
-      // if (req.session.login != 'nova@gmail.com') {
-      //    let message = "É preciso estar logado como administrador para visualizar esta página" ;
-      //    let type = "danger" ;
+      if (req.session.login != 'adm@gmail.com') {
+         let message = "É preciso estar logado como administrador para visualizar esta página" ;
+         let type = "danger" ;
          
-      //    res.render('users/login', {message, type})
-      // }
+         res.render('users/login', {message, type})
+      }
 
       try {
          const {id} = req.params

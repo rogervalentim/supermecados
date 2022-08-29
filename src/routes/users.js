@@ -17,7 +17,7 @@ router.get('/login', function(req, res, next) {
   }
   
   if(req.session.login){
-    res.render('/users/login')
+    res.render('users/index')
   }else{
     res.render('users/login')
   }
@@ -44,7 +44,7 @@ router.post('/login', async function(req, res, next) {
     let type = "success" ;
     
     user = req.body.user_email;
-    res.render('carrinho', {user:user, message, type})
+    res.render('carrinho')
       
   }else{
     let message = "Falha ao logar, verifique se os dados estão corretos" ;
@@ -62,11 +62,17 @@ router.get('/logout', (req, res) => {
       if (err) {
         res.status(400).send('Não foi possível fazer logout: ' + err)
       } else {
-        res.redirect('/users')
+           let message = "Logout realizado com sucesso!" ;
+    let type = "success" ;
+    
+    return res.render('users/login', {message, type})
       }
     })
   }else{
-    res.redirect('/users')
+       let message = "Logout realizado com sucesso!" ;
+    let type = "success" ;
+    
+    return res.render('users/login', {message, type})
   }
 })
 
