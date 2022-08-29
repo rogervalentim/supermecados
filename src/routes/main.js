@@ -11,6 +11,11 @@ const carrinhoController=require('../controllers/carrinhoController');
 /* GET home page. */
 router.get('/',homeController.index)
 
+router.get('/sucesso', function(req, res) {
+    res.render('sucesso');
+});
+
+
 /* GET products page. */
 router.get('/produtos', productsController.index)
 
@@ -52,5 +57,6 @@ router.post('/api/carrinho/comprar', (req, res) => {
     console.log('CHEGUEI: ',  req.body);
     return res.json("retorno api = "+retorno);
 })
+
 
 module.exports = router;
