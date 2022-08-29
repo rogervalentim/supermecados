@@ -17,7 +17,7 @@ router.get('/login', function(req, res, next) {
   }
   
   if(req.session.login){
-    res.render('users/index')
+    res.render('/users/login')
   }else{
     res.render('users/login')
   }
@@ -44,7 +44,7 @@ router.post('/login', async function(req, res, next) {
     let type = "success" ;
     
     user = req.body.user_email;
-    res.render('users/index', {user:user, message, type})
+    res.render('carrinho', {user:user, message, type})
       
   }else{
     let message = "Falha ao logar, verifique se os dados estão corretos" ;

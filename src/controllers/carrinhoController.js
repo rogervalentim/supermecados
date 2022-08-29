@@ -51,7 +51,7 @@ const carrinhoController = {
 
       const resultado = await ProdutoCompra.bulkCreate(products);
       console.log(resultado, "resultado");
-      return res.render("produtos/produtoListar", { products, message, type });
+      return res.render("produtos/produtoListar", { products  });
     } catch (error) {
       console.log(error);
     }
