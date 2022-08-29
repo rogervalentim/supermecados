@@ -28,6 +28,7 @@
                                     <p class="prod-preco">R$ <%= products[i]['preco']%></p>
                                    
                                 <button class="adicionar-produto" type="button" onclick="adicionar({
+                                       id: '<%= products[i].id_produto  %>',
                                         slug:'<%= products[i].slug %>',
                                         nome: '<%= products[i].nome %>',
                                         preco: '<%= products[i].preco %>',
@@ -54,7 +55,8 @@
                                     <a class="prod-titulo"><%= products[i]['nome']%></a>
                                     <p class="prod-preco">R$ <%= products[i]['preco']%></p>
                                     <button class="adicionar-produto" type="button" onclick="adicionar({
-                                        slug:'<%= products[i].slug %>',
+                                       id: '<%= products[i].id_produto %>',
+                                       slug:'<%= products[i].slug %>',
                                         nome: '<%= products[i].nome %>',
                                         preco: '<%= products[i].preco %>',
                                         quantidade:1 ,

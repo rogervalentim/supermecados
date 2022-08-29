@@ -10,8 +10,9 @@ const productsController={
                as:"categorias"
             }
         })
-          
+        console.log("alguma coisa" ,products)
         res.render('products', {products:products})
+        
     }
 }
 

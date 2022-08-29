@@ -45,15 +45,12 @@ router.delete('/deletar/:id',admProdutoController.destroy)
 
 // Salvar Compra
 
-router.post('/api/carrinho/comprar', carrinhoController.save)
+router.post('/api/carrinho/comprar', carrinhoController.save);
 
-// router.post('/api/carrinho/comprar', (req, res) => {
-//     const retorno = req.body;
-//     console.log('CHEGUEI: ',  req.body);
-//     return res.json("retorno api = "+retorno);
-
-//     // retorno.forEach(element => {
-//     // });
-// });
+router.post('/api/carrinho/comprar', (req, res) => {
+    const retorno = req.body;
+    console.log('CHEGUEI: ',  req.body);
+    return res.json("retorno api = "+retorno);
+})
 
 module.exports = router;

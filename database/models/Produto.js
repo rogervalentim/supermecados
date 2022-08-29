@@ -51,10 +51,13 @@ Produto.associate = (models) => {
     foreignKey: "fk_categoria",
     as: "categorias",
   });
-};
+ 
 
-
-
+  };
 
   return Produto;
-};
+}
+
+
+
+

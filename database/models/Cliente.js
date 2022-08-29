@@ -32,7 +32,15 @@ module.exports = (sequelize, dataTypes) => {
     updatedAt: 'updated_at',
     deletedAt: false
   };
+
   const Cliente = sequelize.define(alias, cols, config);
+  
+  Cliente.associate=(models)=>{
+  Cliente.hasMany(models.Compra,{
+    foreignKey: 'compra_id',
+    as:'compras'
+})
+  }
 
   return Cliente;
 };

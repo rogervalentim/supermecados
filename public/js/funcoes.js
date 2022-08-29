@@ -5,15 +5,15 @@ function adicionar(novoItem) {
     ? JSON.parse(localStorage.getItem('carrinho'))
     : [];
 
-  console.log(carrinho.find((p) => p?.slug == novoItem.slug));
+  console.log(carrinho.find((p) => p?.id == novoItem.id));
 
-  if (carrinho.find((p) => p?.slug == novoItem.slug)) {
+  if (carrinho.find((p) => p?.id == novoItem.id)) {
     // console.log('achou...', novoItem.quantidade);
     novoItem.quantidade += carrinho.find(
-      (p) => p?.slug === novoItem.slug
+      (p) => p?.id === novoItem.id
     ).quantidade;
   }
-  const copia = [novoItem, ...carrinho.filter((p) => p?.slug !== novoItem.slug)];
+  const copia = [novoItem, ...carrinho.filter((p) => p?.id !== novoItem.id)];
 
   localStorage.setItem('carrinho', JSON.stringify(copia));
 
@@ -27,7 +27,7 @@ function remover(itemCarrinho) {
     : [];
 
   // Alterar a quantidade
-  const produtoNoCarrinho = carrinho.find((p) => p.slug === itemCarrinho.slug);
+  const produtoNoCarrinho = carrinho.find((p) => p.id === itemCarrinho.id);
   if (produtoNoCarrinho) {
     //Alterar a quantidade1
     produtoNoCarrinho.quantidade = produtoNoCarrinho.quantidade - 1;
@@ -71,7 +71,7 @@ function exibirCarrinho() {
             }
         </p>
         <p>
-            <button class="btn-carrinho btn btn-danger" onclick="remover({slug:'${produto.slug}', nome:'${produto.nome}'})">Remover </button>
+            <button class="btn-carrinho btn btn-danger" onclick="remover({id:'${produto.id}', nome:'${produto.nome}'})">Remover </button>
         </p></div></div>`;
   });
 
