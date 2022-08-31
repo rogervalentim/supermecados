@@ -6,6 +6,7 @@ const productController= require('../controllers/productController');
 const finalizacaoController= require('../controllers/finalizacaoController');
 const clienteController= require('../controllers/clienteController');
 const admProdutoController=require('../controllers/admProdutoController');
+const admCategoriaController=require('../controllers/admCategoriaController');
 const carrinhoController=require('../controllers/carrinhoController');
 
 /* GET home page. */
@@ -47,6 +48,24 @@ router.put('/alterar/:id',admProdutoController.update)
 
 //deletar
 router.delete('/deletar/:id',admProdutoController.destroy)
+
+
+// Categorias
+//listar
+router.get('/lista/categorias',admCategoriaController.list)
+
+//criar
+router.get('/categoria/cadastrar',admCategoriaController.create)
+
+//salvar
+router.post('/categoria/cadastrar',admCategoriaController.store)
+
+//alterar
+router.get('/categoria/alterar/:id',admCategoriaController.edit)
+router.put('/categoria/alterar/:id',admCategoriaController.update)
+
+//deletar
+router.delete('/categoria/deletar/:id',admCategoriaController.destroy)
 
 // Salvar Compra
 
