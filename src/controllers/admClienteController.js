@@ -18,6 +18,10 @@ const admClienteController = {
             email:req.body.email,
             senha: $password,
             ativo: 1,
+            endereco:req.body.endereco,
+            cidade:req.body.cidade,
+            estado:req.body.estado,
+            telefone:req.body.telefone,
          })
 
          let message = "Usuário cadastrado com sucesso!" ;
@@ -55,6 +59,10 @@ const admClienteController = {
          nome:req.body.nome,
          email:req.body.email,
          senha: $password,
+         endereco:req.body.endereco,
+         cidade:req.body.cidade,
+         estado:req.body.estado,
+         telefone:req.body.telefone,
       },{
          where:{
             id:id

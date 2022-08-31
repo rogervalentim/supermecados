@@ -21,6 +21,22 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.STRING(15),
       allowNull: false
     },
+    estado: {
+      type: dataTypes.STRING(150),
+      allowNull: false
+    },
+    cidade: {
+      type: dataTypes.STRING(150),
+      allowNull: false
+    },
+    endereco: {
+      type: dataTypes.STRING(150),
+      allowNull: false
+    },
+    telefone: {
+      type: dataTypes.STRING(150),
+      allowNull: false
+    },
     ativo: {
       type: dataTypes.BOOLEAN,
       allowNull: false

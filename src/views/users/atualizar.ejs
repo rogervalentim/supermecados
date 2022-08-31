@@ -26,7 +26,7 @@
 	 <% } %>
 
 	<h1 class="titulo">Perfil do Usuário</h1>
-	<div class="cadastro">
+	<div class="container">
 		<h3 class="p-3">Alterar Dados</h3>
 		<form action="/users/alterar/<%= cliente.id %>?_method=PUT" method="post">
 			<div class="field">
@@ -40,6 +40,25 @@
 			<div class="field">
 				<label class="l1" for="senha"><strong>senha</strong></label>
 				<input class="campo" type="password" id="senha" name="senha" required>
+			</div>
+
+			<hr>
+			<h3 class="my-4">Informações</h3>
+			<div class="field">
+				<label class="l1" for="estado"><strong>Estado</strong></label>
+				<input class="campo" type="estado" id="estado" name="estado" value="<%= cliente.estado %>" required>
+			</div>
+			<div class="field">
+				<label class="l1" for="cidade"><strong>Cidade</strong></label>
+				<input class="campo" type="cidade" id="cidade" name="cidade" value="<%= cliente.cidade %>" required>
+			</div>
+			<div class="field">
+				<label class="l1" for="endereco"><strong>Endereço</strong></label>
+				<input class="campo" type="endereco" id="endereco" name="endereco" value="<%= cliente.endereco %>" required>
+			</div>
+			<div class="field">
+				<label class="l1" for="telefone"><strong>Telefone</strong></label>
+				<input class="campo" type="telefone" id="telefone" name="telefone" value="<%= cliente.telefone %>" required>
 			</div>
 			<button class="bt-cadastro" type="submit">Salvar Alterações</button>
 		</form>

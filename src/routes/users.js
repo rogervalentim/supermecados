@@ -7,7 +7,7 @@ const bcrypt = require("bcrypt");
 
 
 /* GET login. */
-router.get('/login', function(req, res, next) {
+router.get('/login', async function(req, res, next) {
 
   if (req.query.code == 1) {
     let message = "Faça login para continuar a compra" ;
@@ -17,7 +17,14 @@ router.get('/login', function(req, res, next) {
   }
   
   if(req.session.login){
-    res.render('users/index')
+    const cliente = await Cliente.findOne({
+      where: {
+        email: req.session.login,
+        ativo: 1
+      }
+    })
+
+    res.render('users/index', {cliente})
   }else{
     res.render('users/login')
   }
