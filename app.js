@@ -9,6 +9,7 @@ var logger = require("morgan");
 var mainRouter = require("./src/routes/main");
 var usersRouter = require("./src/routes/users");
 var carrinhoRouter = require("./src/routes/carrinho");
+var teste = require("./src/routes/teste");
 var app = express();
 
 // view engine setup
@@ -28,7 +29,7 @@ app.use(methodOverride("_method"));
 app.use("/", mainRouter);
 app.use("/users", usersRouter);
 app.use("/carrinho", carrinhoRouter);
-
+app.use("/api/teste", teste)
 app.use("/", (req, res) => {
   res.json({ message: "Hello from express app" });
 });
