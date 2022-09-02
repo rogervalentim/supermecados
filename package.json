@@ -2,6 +2,7 @@
   "name": "projeto-integrador",
   "version": "0.0.0",
   "private": true,
+  "main": "app.js",
   "scripts": {
     "dev": "nodemon ./bin/www",
     "start": "node ./bin/www"
